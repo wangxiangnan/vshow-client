@@ -1,0 +1,45 @@
+<view class="profile">
+  <view class="profile_hd">
+    <view class="profile_hd_info">
+      <view class="user_avatar" style="background-image: url({{ avatarUrl }})">
+        <view wx:if="{{ isVip }}" class="icon_vip"></view>
+      </view>
+      <view class="user_name user_text">李时珍</view>
+      <view class="user_gender user_text">男</view>
+      <view class="user_department user_text">所属科室： 眼科</view>
+    </view>
+  </view>
+
+  <view class="profile_bd">
+    <view class="profile_list">
+      <view class="profile_item">
+        <view class="profile_item_title">
+          <text>擅长介绍</text>
+        </view>
+        <view class="profile_item_cont">
+          <text class="profile_item_cont_text">从事中医眼科临床和研究23年，具有深厚的中医眼科理论基底。</text>
+        </view>
+      </view>
+
+      <view class="profile_item">
+        <view class="profile_item_title">
+          <text>最新医嘱</text>
+        </view>
+        <view class="profile_item_cont doctor_advice">
+          <text class="profile_item_cont_text">从事中医眼科临床和研究23年，具有深厚的中医眼科理论基底。</text>
+          <view class="profile_item_cont_imgs">
+            <view class="profile_item_cont_img" style="background-image: url({{ avatarUrl2 }})"></view>
+            <view class="profile_item_cont_img" style="background-image: url({{ avatarUrl2 }})"></view>
+            <view class="profile_item_cont_img" style="background-image: url({{ avatarUrl2 }})"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="profile_ft">
+    <view class="btn_advice" style="background-image: url({{ prfileBg }})">
+      <text>问诊咨询</text>
+    </view>
+  </view>
+</view>

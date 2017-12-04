@@ -1,0 +1,55 @@
+.wallet{
+  line-height: 1;
+  color: #666;
+}
+.wallet_msg{
+  margin-top: 8.53%;
+  text-align: center;
+}
+.msg_icon_wrap{
+  width: 16.53%;
+  display: inline-block;
+}
+.msg_icon{
+  width: 100%;
+}
+.msg_title{
+  margin-top: 3.33%;
+  font-size: 17px;
+}
+.wallet_num{
+  margin-top: 3.73%;
+  font-size: 59px;
+}
+.wallet_fns{
+  margin-top: 10%;
+  padding: 0 4%;
+  font-size: 17px
+}
+.wallet_fn{
+  position: relative;
+  padding-left: 5.63%;
+}
+.wallet_fn::before, .wallet_fn::after{
+  content: '';
+  top: 0;
+  position: absolute;
+  background-image: url(http://localhost/images/micapp/icon/doc_sprite@2x.png);
+  background-size: 138px 126px;
+  background-repeat: no-repeat;
+}
+.wallet_fn::before{
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background-position-y: -39px; 
+}
+.wallet_fn::after{
+  right: 0;
+  width: 10px;
+  height: 16px;
+  background-position-y: -54px; 
+}
+.wallet_fn_hover{
+  opacity: .8
+}

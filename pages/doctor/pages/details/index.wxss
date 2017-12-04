@@ -1,0 +1,114 @@
+.profile_hd{
+
+}
+.profile_hd_info{
+  text-align: center;
+  padding-top: 4.8%;
+}
+.user_avatar{
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 8%;
+  border: 1px solid #5ed958;
+  border-radius: 50%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.icon_vip, .profile_item_cont::before{
+  background-image: url(http://localhost/images/micapp/icon/doc_sprite@2x.png);
+  background-size: 138px 126px;
+  background-repeat: no-repeat;
+}
+.icon_vip{
+  position: absolute;
+  right: 12%;
+  bottom: 0;
+  width: 10px;
+  height: 9px;
+  background-position: 0 0;
+}
+.user_text{
+  font-size: 14px;
+  line-height: 1.6;
+}
+.user_name{
+  margin-top: 3px;
+}
+
+.profile_list{
+  padding: 0 5.3%;
+}
+.profile_item{
+  display: flex;
+  margin-top: 4.2%;
+}
+.profile_item_title{
+  font-size: 14px;
+  width: 18%;
+  text-align: center;
+}
+.profile_item_cont{
+  position: relative;
+  flex: 1;
+  margin-left: 15px;
+  padding: 23px 5px 6px 0;
+  color: #888;
+  font-size: 14px
+}
+.profile_item_cont::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background-position: 0 -9px;
+  z-index: 3;
+}
+.profile_item_cont::after{
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #5ed958;
+  z-index: 2;
+}
+.profile_item_cont_imgs{
+  margin-top: 10px;
+}
+.profile_item_cont_img{
+  display: inline-block;
+  padding: 18.1% 16.4%;
+  margin-left: .5%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.profile_item_cont_img:first-child{
+  margin-left: 0;
+}
+.doctor_advice::before{
+  background-position-y: -24px
+}
+
+.profile_ft{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+}
+.btn_advice{
+  padding: 5.2% 0;
+  font-size: 16px;
+  line-height: 1;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  text-align: center;
+}

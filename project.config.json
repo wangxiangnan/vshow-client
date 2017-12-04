@@ -1,0 +1,155 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.6.4",
+	"appid": "wxeb143cad4e67f4aa",
+	"projectname": "%E5%BE%AEV%E7%A7%80",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "回答页面测试",
+					"pathName": "pages/mine/page/vask/index",
+					"query": "id=59b8fcd61e471b1a5cf72f2c"
+				},
+				{
+					"id": -1,
+					"name": "文字转图",
+					"pathName": "pages/photo/page/makeword/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的页面",
+					"pathName": "pages/mine/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "使用功能",
+					"pathName": "pages/mine/page/extrafns/extrafns",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "图片裁剪",
+					"pathName": "pages/tools/cropper",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "写心情",
+					"pathName": "pages/mine/page/addmood/index",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "创意工厂",
+					"pathName": "pages/photo/page/speciallist/index",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "test页面",
+					"pathName": "pages/test/index",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "创意页面",
+					"pathName": "pages/photo/page/makespecial/index",
+					"query": "pid=0"
+				},
+				{
+					"id": -1,
+					"name": "小秘密",
+					"pathName": "pages/mine/page/secret/index",
+					"query": "pid=0"
+				},
+				{
+					"id": 10,
+					"name": "探探",
+					"pathName": "pages/mine/page/meet/index",
+					"query": "pid=0"
+				},
+				{
+					"id": -1,
+					"name": "show",
+					"pathName": "pages/mine/page/meet/pages/show/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "探探编辑页面",
+					"pathName": "pages/mine/page/meet/pages/edit/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "探探我的页面",
+					"pathName": "pages/mine/page/meet/pages/mine/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "探探结果",
+					"pathName": "pages/mine/page/meet/pages/result/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "探探列表页",
+					"pathName": "pages/mine/page/meet/pages/list/index",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "探探聊天",
+					"pathName": "pages/mine/page/meet/pages/chat/index",
+					"query": "id=599ac2ab66c2b45cd0674f2d"
+				},
+				{
+					"id": -1,
+					"name": "医生详情页",
+					"pathName": "pages/doctor/pages/details/index",
+					"query": ""
+				},
+				{
+					"id": 18,
+					"name": "医生认证",
+					"pathName": "pages/doctor/pages/authorize/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "钱包",
+					"pathName": "pages/doctor/pages/wallet/index",
+					"query": ""
+				},
+				{
+					"id": 20,
+					"name": "私信列表",
+					"pathName": "pages/doctor/pages/letterlist/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

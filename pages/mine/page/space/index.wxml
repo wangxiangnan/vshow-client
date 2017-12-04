@@ -1,0 +1,82 @@
+<view class="vspace">
+  <!-- 头部 -->
+  <view class="header">
+    <!-- 封面部分 -->
+    <view class="profile">
+      <view class="profile-info">
+        <view class="avatar">
+          <view class="avatar-img" style="background-image:url({{ uavatar }})"></view>
+        </view>
+        <view class="user-name">{{ uname }}</view>
+      </view>
+
+      <view class="cover-img" style="background-image:url({{ uavatar }})">
+      </view>
+    </view>
+    <!-- 导航栏 -->
+    <!-- <view class="nav">
+      <view class="nav-item" wx:for="{{ navList }}">
+        <view class="item-title">{{item.title}}</view>
+        <view class="item-num">{{item.num}}</view>
+      </view>
+    </view> -->
+  </view>
+  <!-- 主体 -->
+  <view class="body">
+    <view class="dataItem" wx:for="{{ moodList }}" wx:key="{{ item.uid}}">
+      <view class="dataItem-hd">
+        <view class="avatar">
+         <view class="avatar-img" style="background-image:url({{ item.author.avatarUrl }})"></view>
+        </view>
+        <view class="extra-info">
+          <view class="extra-name">{{ item.author.nickName}}</view>
+          <view class="extra-time">{{item.cretime}}</view>
+        </view>
+      </view>
+
+      <view class="dataItem-bd">
+        <view class="pub-txt">{{item.moodText}}</view>
+        <view wx:if="{{ item.moodImg }}" class="pub-img" bindtap="previewImg" data-url="{{ staticHostUrl + item.moodImg }}">
+          <image mode="widthFix" src="{{ staticHostUrl + item.moodImg }}"></image>
+        </view>
+      </view>
+
+      <view class="dataItem-ft">
+      <view class="address" bindtap="openLocation" data-longitude="{{ item.location.longitude }}" data-latitude="{{ item.location.latitude }}" wx:if="{{ item.location }}">{{ item.location.name }}</view>
+        <view class="action">
+          <!-- <button class="btn-event i-resport"></button>
+          <button class="btn-event i-like"></button> -->
+          <view wx:if="{{ userInfo._id === item.author._id }}" bindtap="delItem" data-id="{{ item._id }}" data-index="{{ index }}" class="del_item">删除</view>
+          <button bindtap="showReply" data-index="{{ index }}" class="btn-event i-coms"></button>
+        </view>
+
+        <view class="comments">
+          <view class="comment" wx:for="{{ item.comments }}" wx:for-index="idx" wx:for-item="comment" data-cid="{{ comment.author._id }}" data-name="{{ comment.author.nickName }}" data-index="{{ index }}" wx:key="{{ comment._id }}"  bindtap="commentToSome">
+            <text class="comment-name">{{ comment.author.nickName }}：</text><text class="comment-cont">{{ comment.cont }}</text>
+          </view>
+        </view>
+        
+      </view>
+
+    </view>
+  </view>
+  <!-- 脚部 -->
+  <view class="footer">
+    <view hidden="{{ !isLoading }}" class="weui-loadmore">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line">
+        <view hidden="{{ hasMore || isLoading }}" class="weui-loadmore__tips weui-loadmore__tips_in-line">加载完毕</view>
+    </view>
+  </view>
+
+  <form hidden="{{ hideReply }}" class="reply-box" bindsubmit="replay" report-submit>
+    <view class="reply-bg">
+      <input class="reply" cursor-spacing="8" name="replyText" focus="{{ focus }}" value="{{ replyValue }}" placeholder="说点什么吧" />
+    </view>
+    
+    <button class="btn-reply" size="mini" disabled="{{ disabled }}" form-type="submit">{{ sendText }}</button>
+  </form>
+  <view hidden="{{ hideReply }}" bindtap="hideReply" class="reply-mask"></view>
+</view>

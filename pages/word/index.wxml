@@ -1,0 +1,13 @@
+<view class="word-bg" style="background-image: url({{ wordBgUrl }})"></view>
+<view class="word">
+  <view class="word-hd">
+    <view class="word-title lh1 tc gb7 f12">文字病毒 一触即发</view>
+  </view>
+
+  <view class="word-bd">
+    <view class="menu">
+      <navigator wx:for="{{wordList}}" wx:key="{{item.key}}" url="page/{{item.url}}?title={{item.text}}&pid={{item.pid}}" style="background-image: url({{item.imgPath}})" class="menu-item tc" ></navigator>
+    </view>
+  </view>
+
+</view>

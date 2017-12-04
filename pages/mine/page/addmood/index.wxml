@@ -1,0 +1,23 @@
+<form class="mood" bindsubmit="send" report-submit>
+  <view class="mood-hd">
+    <!-- <view class="btn-cancal">取消</view>
+    <view class="btn-title">写心情</view> -->
+    <button class="btn-post" disabled="{{ disabled }}" form-type="submit">{{ postText }}</button>
+  </view>
+  
+  <view class="mood-bd">
+    <view class="text-box">
+      <textarea class="textarea" name="moodText" maxlength="{{ textNum }}" placeholder="说点什么吧...." />
+      <view class="text-tools">
+        <view class="tool-pos" bindtap="getLocation">{{ addressName || '所在位置'}}</view>
+        <view class="tool-text">最大字数：{{ textNum }}</view>
+      </view>
+    </view>
+    <view class="img-box">
+      <view hidden="{{ moodImgUrl }}" style="background-image: url({{ upload_Pic }})" class="btn-add img-item" bindtap="selImg"></view>
+      <view hidden="{{ !moodImgUrl }}" class="img-item" bindtap="showActionSheet">
+        <image class="img" mode="aspectFill" src="{{ moodImgUrl }}"></image>
+      </view>
+    </view>
+  </view>
+</form>

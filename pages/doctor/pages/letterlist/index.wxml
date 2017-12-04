@@ -1,0 +1,22 @@
+<view class="let_list_wrap">
+  <scroll-view class="let_list" scroll-y>
+    <!-- 一个item start -->
+    <navigator class="let_item" wx:for="12345">
+      <view class="let_item_hd">
+        <image class="let_item_thumb" src="{{ avatarUrl }}" />
+        <view class="tips_unread"></view>
+      </view>
+
+      <view class="let_item_bd">
+        <view class="let_item_title">
+          <view class="user_name">邢丽丽</view>
+          <view class="user_auth">认证医生</view>
+          <view class="let_time">10-13</view>
+        </view>
+
+        <view class="let_item_desc">TA: 互相收藏吧，啦啦啦啦啦,敲打这故里，坐在你的面前</view>
+      </view>
+    </navigator>
+    <!-- 一个item end -->
+  </scroll-view>
+</view>
