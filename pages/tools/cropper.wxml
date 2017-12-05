@@ -1,8 +1,0 @@
-<view class="cropper">
-  <canvas class="cropper" style="width: {{ windowWidth }}px; height:{{ windowHeight-50 }}px" canvas-id="cropper" disable-scroll="true" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd"/>
-
-  <view class="menu" style="height: 50px">
-    <view class="SelectImg" bindtap="selectImg">重新选择</view>
-    <view class="complete" bindtap="complete">完成</view>
-  </view>
-</view>

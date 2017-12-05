@@ -148,6 +148,12 @@
 					"name": "私信列表",
 					"pathName": "pages/doctor/pages/letterlist/index",
 					"query": ""
+				},
+				{
+					"id": 21,
+					"name": "wecropper",
+					"pathName": "plugins/wecropper/index",
+					"query": "oriImgUrl=https://vvshow.site/images/micapp/wenzi.jpg&createBtnText=上传头像&hasUploadBtn=&targetName=aaa"
 				}
 			]
 		}

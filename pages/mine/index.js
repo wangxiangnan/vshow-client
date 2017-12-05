@@ -1,11 +1,12 @@
 const app = getApp();
-let { imgDirUrl, editAvatarUrl, hostUrl } = require('../../config.js');
-let { NetUploadFile } = require('../../utils/util');
+let { imgDirUrl, editAvatarUrl, staticHostUrl } = require('../../config.js');
+let { NetUploadFile, showTips } = require('../../utils/util');
 Page({
   data: {
     defaultAvatarUrl: `${imgDirUrl}defalt_avatar.png`,
     userInfo: null,
     bgPic: `${imgDirUrl}mine_bg.jpg`,
+    targetName: 'avatarUrl', //唯一的裁剪图片生成的key app.globalData.avatarUrl
     mineList: [{
       id: 1,
       name: '更多功能',
@@ -33,31 +34,39 @@ Page({
       }]
   },
 
-  updateWechatAvatar(avatarUrl){
-    console.log('开始替换图片');
-    wx.getUserInfo({
-      success(res){
-        console.log('替换图片');
-        wx.downloadFile({
-          url: res.userInfo.avatarUrl,
-          success(res) {
-            NetUploadFile({
-              url: editAvatarUrl,
-              name: 'avatarUrl',
-              filePath: res.tempFilePath,
-              success(res) {
-                console.log(res);
-                let { statusCode, data } = res;
-                //console.log(data);
-                if (-statusCode === -200) { //上传成功
-                  app.globalData.userInfo.avatarUrl = hostUrl + data;
-                }
-              }
-            });
-          }
-        })
+  updateAvatar(avatarUrl){
+    let self = this;
+    wx.showLoading({
+      title: '上传中...',
+      mask: true
+    });
+    NetUploadFile({
+      url: editAvatarUrl,
+      name: 'avatarUrl',
+      filePath: avatarUrl,
+      success(res) {
+        //console.log(res);
+        let { statusCode, data } = res;
+        //console.log(data);
+        if (-statusCode === -200) { //上传成功
+          app.globalData.userInfo.avatarUrl = staticHostUrl + data;
+          self.setData({
+            'userInfo.avatarUrl': app.globalData.userInfo.avatarUrl
+          });
+          showTips('上传头像成功');
+
+        } else {  //上传失败
+          showTips('上传失败,稍后重试');
+        }
+      },
+      fail(res) {
+        showTips('网络错误,稍后重试');
+        pageCtx.setData({
+          disabled: false,
+          btnText: '上传头像'
+        });
       }
-    })
+    });
     
     
   },
@@ -113,6 +122,7 @@ Page({
 
   tapAvatar(){
     if(!app.globalData.userInfo) return console.error('未登录');
+    let { targetName } = this.data;
     wx.showModal({
       title: '是否上传头像',
       success(res){
@@ -122,7 +132,7 @@ Page({
             sizeType: ['compressed'],
             success(res) { //res.tempFilePaths
               wx.navigateTo({
-                url: './page/cropper/index?imgUrl=' + res.tempFilePaths[0]
+                url: `/plugins/wecropper/index?oriImgUrl=${res.tempFilePaths[0]}&hasUploadBtn=&createBtnText=上传头像&targetName=${targetName}`
               })
             },
           })
@@ -131,6 +141,14 @@ Page({
         }
       }
     })
+  },
+
+  onShow(){
+    let { targetName } =this.data;
+    if (app.globalData[targetName]){  //如果存在，则说明上传图片已裁剪完毕，开始上传， 上传完毕，请清除
+      this.updateAvatar(app.globalData[targetName]);
+      delete app.globalData[targetName];
+    }
   },
 
   replaceBgPic(){

@@ -8,7 +8,7 @@ const data = {
   }, {
       id: 1,
       title: '裁剪工具',
-      desc: '小巧的裁剪工具'
+      desc: '裁切正方形图片，制作头像等'
     }, {
       id: 2,
       title: '你问她答',
@@ -34,7 +34,7 @@ Page({
       break;
       case 1:   //图片裁剪
         wx.navigateTo({
-          url: '../../../tools/cropper',
+          url: '/plugins/wecropper/index',
         })
         break;
 
