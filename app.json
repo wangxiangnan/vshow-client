@@ -37,8 +37,7 @@
     "pages/mine/page/meet/pages/result/index",
     "pages/mine/page/meet/pages/list/index",
     "pages/mine/page/meet/pages/chat/index",
-    "pages/mine/page/extrafns/extrafns",
-    "utils/Login.js"
+    "pages/mine/page/extrafns/extrafns"
   ],
   "window": {
     "backgroundTextStyle": "dark",
