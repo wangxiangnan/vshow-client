@@ -17,7 +17,7 @@
 
   <view class="controller">
     <view class="input_box">
-      <input name="input" confirm-type="send" value="{{ inputValue }}" focus="{{ isFocus }}" bindconfirm="sendText" />
+      <input name="input" class="chat_text" confirm-type="send" cursor-spacing="12" value="{{ inputValue }}" focus="{{ isFocus }}" bindconfirm="sendText" />
     </view>
     <view class="btn_img" bindtap="sendImg" style="background-image: url({{ iconUploadTipsUrl }})"></view>
   </view>

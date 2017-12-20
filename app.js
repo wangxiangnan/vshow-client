@@ -1,5 +1,5 @@
 const { loginUrl, regUrl, getUserBySessionUrl, hostUrl, getSpecialListUrl, staticHostUrl, imgDirUrl, socketHostUrl } = require('./config.js');
-const { NetRequest } = require('./utils/util.js');
+const { NetRequest, formatTime } = require('./utils/util.js');
 let Login = {
   init(appConText, fn){
     let self = this;
@@ -186,6 +186,15 @@ let Login = {
 
 
 App({
+  getRoomPage: function () {
+    return this.getPage("pages/mine/page/meet/pages/chat/index")
+  },
+  getPage: function (pageName) {
+    var pages = getCurrentPages()
+    return pages.find(function (page) {
+      return page.__route__ == pageName
+    })
+  },
   onLaunch: function () {
     //调用API从本地缓存中获取数据
     let self = this;
@@ -198,38 +207,54 @@ App({
 
 
     //wss
-    /*
-    wx.connectSocket({
-      url: 'wss://vvshow.site/wss',
-      data: {
-        a: 10
-      },
-      success(res) {
-        console.log(res);
-      },
-      fail(err) {
-        console.log(err);
-      }
-    })
-    wx.onSocketOpen(function (res) {
-      console.log('WebSocket连接已打开！');
-      self.globalData.wx = wx;
-      wx.sendSocketMessage({
-        data: JSON.stringify({
-          a: 10,
-          b: 29
-        })
+    /*this.getUserInfo((userInfo) => {
+      if(!userInfo._id) return; 
+      wx.connectSocket({
+        url: 'wss://vvshow.site/wss?id=' + userInfo._id
       })
-    })
-    wx.onSocketMessage(function (res) {
-      console.log('收到服务器内容：' + res.data)
-    });
+      wx.onSocketOpen(function (res) {
+        console.log('WebSocket连接已打开！');
+      })
+      wx.onSocketMessage(function (res) {
+        var data;
+        try{
+          data = JSON.parse(res.data);
+        }catch(err){
+          data = res.data;
+        }
+        if(typeof data === 'object'){
+          switch(data.type){
+            case 'text':{
+              var page = self.getRoomPage();
+              console.log('app-page-->', page)
+              var recTime = formatTime(new Date);
+              var msgData = Object.assign(data, { recTime: recTime });
+              var chatMsg = wx.getStorageSync(msgData.to + msgData.from) || []
+              chatMsg.push(msgData);
+              wx.setStorage({
+                key: msgData.to + msgData.from,
+                data: chatMsg,
+                success: function (res) {
+                  if(page){  //如果在聊天页
+                  console.log(page);
+                    page.receiveMsg(msgData);
+                  }
+                }
+              })
+            }
 
-    wx.onSocketClose(function (res) {
-      console.log('WebSocket 已关闭！')
-    })
+          }
+        }
+        
+      });
 
-    */
+      wx.onSocketClose(function (res) {
+        wx.connectSocket({
+          url: 'wss://vvshow.site/wss?id=' + userInfo._id
+        })
+      });
+    });*/
+
    
     
     

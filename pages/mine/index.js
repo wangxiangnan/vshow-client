@@ -21,9 +21,9 @@ Page({
       icon: `${imgDirUrl}wwx_sy.png`
       }, {
         id: 3,
-        name: '小秘密',
+        name: '手写板',
         bgColor: '#6cacf4',
-        url: './page/secret/index',
+        url: './page/handwrite/index',
         icon: `${imgDirUrl}wwx_zp.png`
       }, {
         id: 4,

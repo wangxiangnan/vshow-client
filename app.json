@@ -19,7 +19,9 @@
     "pages/doctor/pages/authorize/index",
     "pages/doctor/pages/wallet/index",
     "pages/doctor/pages/letterlist/index",
+
     "pages/mine/index",
+    "pages/mine/page/handwrite/index",
     "pages/mine/page/vspace/index",
     "pages/mine/page/space/index",
     "pages/mine/page/vtestpaper/index",

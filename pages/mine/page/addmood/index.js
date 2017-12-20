@@ -20,7 +20,7 @@ Page({
     let self = this;
     wx.chooseLocation({
       success(res) {
-        //console.log(res);
+        console.log(res);
         let { address, name, latitude, longitude } = res;
         self.setData({
           addressName: name,

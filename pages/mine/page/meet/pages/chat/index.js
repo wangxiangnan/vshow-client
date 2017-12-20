@@ -1,5 +1,5 @@
 const { imgDirUrl, getUserInfoUrl, hostUrl } = require('../../../../../../config');
-const { NetRequest, showTips } = require('../../../../../../utils/util.js');
+const { NetRequest, showTips, formatTime } = require('../../../../../../utils/util.js');
 const app= getApp();
 Page({
   data: {
@@ -9,7 +9,7 @@ Page({
     user: null,
     customer: null,
     inputValue: '',
-    isFocus: true,
+    isFocus: false,
     chatList: [{
       from: '599ac2ab66c2b45cd0674f2d',
       to: '5999366f80dbfb42073256e6',
@@ -29,34 +29,36 @@ Page({
     let self = this;
     let { id } = params;
     if(!id) return console.error('id无效！');
-    NetRequest({
-      url: getUserInfoUrl,
-      data: {
-        id
-      },
-
-      success(res){
-        //console.log(res);
-        let { statusCode, data } = res;
-        if (-statusCode === -200){
-          !/http/.test(data.avatarUrl) && (data.avatarUrl = hostUrl + data.avatarUrl);
-          self.setData({
-            customer: data
-          });
-        }else{
-          showTips(data);
-        }
-      },
-      fail(res){
-        //console.log(res);
-        showTips('获取失败,稍后重试');
-      }
-    });
+    
     app.getUserInfo(userInfo => {
-      self.setData({
-        user: userInfo
+      NetRequest({
+        url: getUserInfoUrl,
+        data: {
+          id
+        },
+
+        success(res) {
+          //console.log(res);
+          let { statusCode, data } = res;
+          if (-statusCode === -200) {
+            !/http/.test(data.avatarUrl) && (data.avatarUrl = hostUrl + data.avatarUrl);
+            var chatMsg = wx.getStorageSync(userInfo._id + data._id) || [];
+            self.setData({
+              customer: data,
+              user: userInfo,
+              chatList: chatMsg
+            });
+          } else {
+            showTips(data);
+          }
+        },
+        fail(res) {
+          //console.log(res);
+          showTips('获取失败,稍后重试');
+        }
       });
     });
+    
   },
   sendImg(){
     
@@ -69,22 +71,51 @@ Page({
     let { chatList, user, customer } = self.data;
     value = value.trim();
     if(!value) return showTips('请填写文字内容');
-    wx.sendSocketMessage({
-      data: JSON.stringify({
-        type: 'chat',
-        from: user._id,
-        to: customer._id,
-        text: value
-      })
+    wx.showLoading({
+      title: '发送中...',
+      mask: true
     });
-    chatList.push({
+    var time = formatTime(new Date);
+    var data = {
+      type: 'text',
       from: user._id,
       to: customer._id,
-      text: value
-    });
-    self.setData({
-      chatList, inputValue: '', isFocus: true
+      text: value,
+      sendTime: time
+    };
+    wx.sendSocketMessage({
+      data: JSON.stringify(data),
+      success(res){ //发送成功
+        var chatMsg = wx.getStorageSync(data.from + data.to) || [];
+        chatMsg.push(data);
+        wx.setStorage({
+          key: data.from + data.to,
+          data: chatMsg
+        });
+        self.setData({
+          chatList: chatMsg, inputValue: ''
 
+        });
+      },
+      fail(res) { //发送失败
+        wx.showToast({
+          title: '发送失败'
+        })
+      },
+      complete(){
+        wx.hideLoading();
+      }
     });
+    
+  },
+
+  receiveMsg(data){
+    let self = this;
+    let { chatList, user, customer } = self.data;
+    if (customer._id === data.from){
+      chatList.push(data);
+      self.setData({ chatList });
+    }
+    
   }
 });

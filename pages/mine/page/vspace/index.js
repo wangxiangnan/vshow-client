@@ -1,5 +1,5 @@
 // pages/mine/page/vspace/index.js
-const { hostUrl, imgDirUrl, staticHostUrl, getMoodListUrl, postCommentUrl, sendTempMsgUrl, delMoodUrl } = require('../../../../config.js');
+const { imgDirUrl, staticHostUrl, getMoodListUrl, postCommentUrl, sendTempMsgUrl, delMoodUrl } = require('../../../../config.js');
 const { NetRequest, showTips, saveFormId } = require('../../../../utils/util');
 const LoadList = require('../../../../utils/loadlist');
 const app = getApp();
