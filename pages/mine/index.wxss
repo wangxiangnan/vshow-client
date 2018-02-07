@@ -8,7 +8,10 @@
 .item_active{opacity: .5}
 .ani_active{background: eef10c; color: #000;}
 .list_text{bottom: 10px; left: 10px}
-.item_icon{width: 80rpx; top: 10px; left: 10px;}
+.item_icon{
+  width: 80rpx;
+  top: 10px;
+  left: 10px;}
 .login_btn{
   background: none;
 }

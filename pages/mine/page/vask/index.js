@@ -14,6 +14,7 @@ Page({
   },
 
   onLoad(options){
+    
     let { id } = options;
     if(id && id != -1){  //id存在
       
@@ -45,7 +46,8 @@ Page({
         id
       },
       success(res) {
-        console.log(res);
+        //console.log(res);
+        
         if (-res.statusCode === -200) { //成功
           showTips('获取问题成功');
           self.setData({
@@ -62,7 +64,7 @@ Page({
       },
       fail() {
         showTips('获取问题失败');
-        setTimeout(() => {
+         setTimeout(() => {
           wx.switchTab({
             url: '/pages/mine/index',
           });
@@ -70,7 +72,7 @@ Page({
       },
 
       complete(){
-        wx.hideLoading();
+        //wx.hideLoading();
       }
     });    
 

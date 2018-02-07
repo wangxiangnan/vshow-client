@@ -15,7 +15,7 @@
   <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
           <view class="weui-cell__bd">
-              <textarea class="weui-textarea" name="askText" bindblur="textBlur" placeholder="写点什么吧" />
+              <textarea class="weui-textarea" name="askText" maxlength='-1' value="{{ textarea }}" bindblur="textBlur" placeholder="写点什么吧" />
           </view>
       </view>
   </view>
