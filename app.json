@@ -18,26 +18,16 @@
     "pages/tools/split",
     "plugins/wecropper/index",
 
-
-    "pages/doctor/index",
-    "pages/doctor/pages/details/index",
-    "pages/doctor/pages/authorize/index",
-    "pages/doctor/pages/wallet/index",
-    "pages/doctor/pages/letterlist/index",
-
     "pages/common/previewimage/index",
 
     "pages/mine/index",
-    "pages/mine/page/handwrite/index",
-    "pages/mine/page/vspace/index",
-    "pages/mine/page/space/index",
+    "pages/mine/page/leaveword/index",
+    "pages/mine/page/sendleaveword/index",
     "pages/mine/page/vtestpaper/index",
     "pages/mine/page/vask/index",
     "pages/mine/page/reslist/index",
     "pages/mine/page/result/index",
     "pages/mine/page/vquiz/index",
-    "pages/mine/page/addmood/index",
-    "pages/mine/page/cropper/index",
     "pages/mine/page/secret/index",
     "pages/mine/page/meet/index",
     "pages/mine/page/meet/pages/show/index",

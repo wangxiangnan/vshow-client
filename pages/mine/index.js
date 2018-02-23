@@ -17,7 +17,7 @@ Page({
       id: 2,
       name: '留言板',
       bgColor: '#ffa648',
-      url: './page/vspace/index',
+      url: './page/leaveword/index',
       icon: `${imgDirUrl}wwx_sy.png`
       }, {
         id: 3,

@@ -52,12 +52,6 @@
 				},
 				{
 					"id": -1,
-					"name": "图片裁剪",
-					"pathName": "pages/tools/cropper",
-					"query": ""
-				},
-				{
-					"id": -1,
 					"name": "写心情",
 					"pathName": "pages/mine/page/addmood/index",
 					"query": ""
@@ -174,6 +168,18 @@
 					"id": -1,
 					"name": "预览图片",
 					"pathName": "pages/common/previewimage/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "留言板",
+					"pathName": "pages/mine/page/leaveword/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发送留言",
+					"pathName": "pages/mine/page/sendleaveword/index",
 					"query": ""
 				}
 			]

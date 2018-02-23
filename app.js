@@ -10,8 +10,7 @@ let Login = {
       });
     }else{
       wx.showLoading({
-        title: '登录中...',
-        mask: true
+        title: '登录中...'
       });
     }
     self.appConText = appConText;
@@ -172,7 +171,7 @@ App({
     //logs.unshift(Date.now());
     //wx.setStorageSync('logs', logs);
     
-    //Login.init(self);
+    Login.init(self);
 
 
     //wss

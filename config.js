@@ -86,6 +86,11 @@ const config = {
     // 获取用户的互相喜欢列表
     getMatchListUrl: `${hostUrl}/tantan/getmatchlist`,
 
+    // 添加留言
+    addLeaveWords: `${hostUrl}/api/addleavewords`, 
+
+    // 获取留言列表
+    fetchLeaveWords: `${hostUrl}/api/fetchleavewords`,
 
 
     // 测试的请求地址，用于测试会话
