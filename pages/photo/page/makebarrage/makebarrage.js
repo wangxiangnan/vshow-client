@@ -327,26 +327,9 @@ Page({
       destHeight: 500,
       success(res) {
         let imgUrl = res.tempFilePath;
-        wx.showModal({
-          title: '生成完成',
-          content: '是否发表到V友圈',
-          success(res) {
-            if (res.confirm) {
-              wx.navigateTo({
-                url: `/pages/mine/page/addmood/index?imgUrl=${imgUrl}`,
-              })
-            } else {
-              wx.previewImage({
-                urls: [imgUrl]
-              });
-            }
-          },
-          fail() {
-            wx.previewImage({
-              urls: [imgUrl]
-            });
-          }
-        });
+        wx.navigateTo({
+          url: '../../../common/previewimage/index?url=' + imgUrl
+        })
       },
 
       complete(){

@@ -1,0 +1,11 @@
+<view class="preview">
+  <view class="image-box">
+    <image class="image" bindtap="onClick" mode="widthFix" src="{{ imgUrl }}"></image>
+  </view>
+  <view class="btns">
+    <saveimage-btn type="primary" url="{{ imgUrl }}">保存到相册</saveimage-btn >
+    <view class="gap"></view>
+    <share-btn type="default">邀请朋友玩</share-btn>
+  </view>
+  
+</view>

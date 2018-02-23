@@ -9,12 +9,8 @@ const data = {
       id: 1,
       title: '裁剪工具',
       desc: '裁切正方形图片，制作头像等'
-    }, {
-      id: 2,
-      title: '你问她答',
-      desc: '向你的微信好友或群提问问题,快来体验吧！'
-    }, {
-    id: 3,
+    },{
+    id: 2,
     title: '寻觅',
     desc: '通过头像遇见更好的遇见吧'
     }]
@@ -38,13 +34,7 @@ Page({
         })
         break;
 
-      case 2:   //问卷
-        wx.navigateTo({
-          url: '../vtestpaper/index',
-        })
-      break;
-
-      case 3:   //探探
+      case 2:   //探探
         wx.navigateTo({
           url: '../meet/index',
         })

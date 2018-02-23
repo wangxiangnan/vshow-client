@@ -7,6 +7,9 @@
     "pages/photo/page/makespecial/index",
     "pages/photo/page/speciallist/index",
     "pages/photo/page/makeword/index",
+    "pages/photo/page/handwritten/index",
+
+
     "pages/word/index",
     "pages/word/page/make/make",
     "pages/test/index",
@@ -14,11 +17,15 @@
     "pages/test/page/temp/temp",
     "pages/tools/split",
     "plugins/wecropper/index",
+
+
     "pages/doctor/index",
     "pages/doctor/pages/details/index",
     "pages/doctor/pages/authorize/index",
     "pages/doctor/pages/wallet/index",
     "pages/doctor/pages/letterlist/index",
+
+    "pages/common/previewimage/index",
 
     "pages/mine/index",
     "pages/mine/page/handwrite/index",

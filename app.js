@@ -2,16 +2,16 @@ const { loginUrl, regUrl, getUserBySessionUrl, hostUrl, getSpecialListUrl, stati
 const { NetRequest, formatTime } = require('./utils/util.js');
 let Login = {
   init(appConText, fn){
+    console.log('init');
     let self = this;
-    self.resFn = [];
     if(fn){
       wx.showLoading({
         title: '重新登录中...',
       });
-      typeof fn === 'function' && (self.resFn = [fn]);
     }else{
       wx.showLoading({
-        title: '登录中...'
+        title: '登录中...',
+        mask: true
       });
     }
     self.appConText = appConText;
@@ -32,7 +32,6 @@ let Login = {
             !/http/.test(data.avatarUrl) && (data.avatarUrl = staticHostUrl + data.avatarUrl); //如果没有http证明是存储的本地头像
             //data.avatarUrl = hostUrl + data.avatarUrl;
             self.appConText.globalData.userInfo = data;
-            self.doResFn(self.appConText.globalData.userInfo);
           }else{  
             self.start();
           }
@@ -60,7 +59,6 @@ let Login = {
         !/http/.test(data.avatarUrl) && (data.avatarUrl = staticHostUrl + data.avatarUrl); //如果没有http证明是存储的本地头像
         //data.avatarUrl = hostUrl + data.avatarUrl;
         self.appConText.globalData.userInfo = data;
-        self.doResFn(self.appConText.globalData.userInfo);
         wx.hideLoading();
         wx.showToast({
           title: '登录成功'
@@ -81,8 +79,7 @@ let Login = {
                   })
                 }
               }
-            });
-            return self.doResFn(null);            
+            });         
           }else{
             let { statusCode, data } = res;
             wx.showToast({
@@ -91,7 +88,6 @@ let Login = {
             //data.avatarUrl = hostUrl + data.avatarUrl;
             !/http/.test(data.avatarUrl) && (data.avatarUrl = staticHostUrl + data.avatarUrl); //如果没有http证明是存储的本地头像
             self.appConText.globalData.userInfo = data;
-            self.doResFn(self.appConText.globalData.userInfo);
           }
           
           
@@ -100,33 +96,6 @@ let Login = {
     });   
   },
 
-  insertResFn(fn){
-    let self = this;
-    wx.hideLoading();
-    if (self.resFn) {   //默认是个空数组，当拿到数据，遍历完时，则为null，如果为null，就是已经获取到了
-      console.log(self.resFn);
-      typeof fn === 'function' && self.resFn.push(fn);
-    } else {    //已经遍历完了，从globalData.userInfo中获取数据
-      console.log(self.appConText.globalData.userInfo);
-      typeof fn === 'function' && fn(self.appConText.globalData.userInfo);
-    }
-  },
-
-  doResFn(userInfo){
-    let self = this;
-    if (self.resFn && self.resFn.length) {
-      self.resFn.forEach((v, i) => {
-        typeof v === 'function' && v(userInfo);
-        self.resFn.splice(i, 1);
-        if (!self.resFn.length) {
-          self.resFn = null;
-        }
-      });
-    } else {
-      self.resFn = null;
-    }
-    
-  },
 
   login(fn){
     wx.login({
@@ -139,7 +108,7 @@ let Login = {
             code: res.code
           },
           success(res) {
-            console.log(res);
+            //console.log(res);
             typeof fn === 'function' && fn(null, res);
           },
           fail(err){
@@ -203,7 +172,7 @@ App({
     //logs.unshift(Date.now());
     //wx.setStorageSync('logs', logs);
     
-    Login.init(self);
+    //Login.init(self);
 
 
     //wss
@@ -284,7 +253,12 @@ App({
       //console.log(self.globalData.userInfo);
       typeof cb === 'function' && cb(self.globalData.userInfo);
     }else{
-      Login.insertResFn(cb);
+      let interval = setInterval(() => {
+        if (self.globalData.userInfo){
+          clearInterval(interval);
+          typeof cb === 'function' && cb(self.globalData.userInfo);
+        }
+      }, 200);
     }
     
     

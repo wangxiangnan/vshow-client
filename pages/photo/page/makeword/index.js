@@ -96,18 +96,8 @@ Page({
       canvasId: 'canvas',
       success(res){
         let url = res.tempFilePath;
-        wx.showModal({
-          title: '生成图片成功',
-          content: '是否分享到微秀场',
-          success(res){
-            if(res.confirm){  //同意分享
-              wx.navigateTo({
-                url: '../../../mine/page/addmood/index?imgUrl=' + url,
-              })
-            }else{ //取消分享
-              self.preImg(url);
-            }
-          }
+        wx.navigateTo({
+          url: '../../../common/previewimage/index?url=' + url
         })
       },
 

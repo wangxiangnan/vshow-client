@@ -49,10 +49,9 @@ Page({
           app.globalData[targetName] = src;
           return wx.navigateBack();
         }
-				wx.previewImage({
-					current: '', // 当前显示图片的http链接
-					urls: [src] // 需要预览的图片http链接列表
-				})
+        wx.navigateTo({
+          url: '../../pages/common/previewimage/index?url=' + src
+        })
 			} else {
 				console.log('获取图片地址失败，请稍后重试')
 			}

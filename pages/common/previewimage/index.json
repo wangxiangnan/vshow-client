@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "预览图片",
+  "usingComponents": {
+    "saveimage-btn": "/components/saveimage-btn/index",
+    "share-btn": "/components/share-btn/index"
+  }
+}

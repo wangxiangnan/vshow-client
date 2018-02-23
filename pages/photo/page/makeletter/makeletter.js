@@ -279,7 +279,10 @@ class MakeLetter{
           disabled: false,
           creBtnTxt: '生成图片'
         });
-        wx.showModal({
+        wx.navigateTo({
+          url: '../../../common/previewimage/index?url=' + imgUrl
+        })
+        /*wx.showModal({
           title: '生成完成',
           content: '是否发表到V友圈',
           success(res){
@@ -298,7 +301,7 @@ class MakeLetter{
               urls: [imgUrl]
             });
           }
-        })
+        })*/
         
       }
     })

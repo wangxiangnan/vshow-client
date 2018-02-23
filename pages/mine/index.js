@@ -15,15 +15,15 @@ Page({
       icon: `${imgDirUrl}wwx_cy.png`
     }, {
       id: 2,
-      name: 'V秀场',
+      name: '留言板',
       bgColor: '#ffa648',
       url: './page/vspace/index',
       icon: `${imgDirUrl}wwx_sy.png`
       }, {
         id: 3,
-        name: '手写板',
+        name: '你问她答',
         bgColor: '#6cacf4',
-        url: './page/handwrite/index',
+        url: './page/vtestpaper/index',
         icon: `${imgDirUrl}wwx_zp.png`
       }, {
         id: 4,

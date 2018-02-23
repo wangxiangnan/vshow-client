@@ -27,25 +27,33 @@ function NetRequest({ url, data, success, fail, complete, method = "POST" }) {
     header = { 'content-type': 'application/x-www-form-urlencoded' }
   }
 
-  //console.log(session_id);
+  
   wx.request({
     url,
     method,
     data,
     header,
-    success,
-    fail,
-    complete(res){  //管理sessionId, 如果返回的header中有Set-Cookie,就设置到本地storage中
-      if (!res.header) return;
-      let setCookie = res['header']['set-cookie'] || res['header']['Set-Cookie'];
-      if (setCookie){  //存在则设置
-        Array.isArray(setCookie) && (setCookie = setCookie[0]);
-        let curSessionId = setCookie.split(';')[0].replace('sessionId=', '');
-        wx.setStorageSync('sessionId', curSessionId);
-      }
-      typeof complete === 'function' && complete(res);
+    success: (res) => {
+      setCookie(res);
+      typeof success === 'function' && success(res);
+    },
+    fail: (res) => {
+      setCookie(res);
+      typeof fail === 'function' && fail(res);
     }
   })
+
+  function setCookie(res) {  //管理sessionId, 如果返回的header中有Set-Cookie,就设置到本地storage中
+    if (!res.header) return;
+    let setCookie = res['header']['set-cookie'] || res['header']['Set-Cookie'];
+    if (setCookie) {//存在则设置
+
+      Array.isArray(setCookie) && (setCookie = setCookie[0]);
+      let curSessionId = setCookie.split(';')[0].replace('sessionId=', '');
+      wx.setStorageSync('sessionId', curSessionId);
+    }
+    
+  }
 
 }
 

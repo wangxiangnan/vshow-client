@@ -17,8 +17,8 @@ Page({
     
     let { id } = options;
     if(id && id != -1){  //id存在
-      
       app.getUserInfo(userInfo => {
+        //console.log(userInfo);
         this.loadData(id);
       });
 
@@ -128,6 +128,7 @@ Page({
         }else{
           showTips('上传失败,请重试');
           self.setData({
+            textarea: JSON.stringify(res),
             isLoading: false,
             submitText: '提交回答'
           });

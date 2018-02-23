@@ -60,23 +60,12 @@ Page({
             success(res){
               console.log(res);
               let tempFilePath = res.tempFilePath;
-              wx.showModal({
-                title: '生成图片成功',
-                content: '是否分享到微秀场',
-                success(res) {
-                  if (res.confirm) {  //同意分享
-                    wx.navigateTo({
-                      url: '../../../mine/page/addmood/index?imgUrl=' + tempFilePath
-                    })
-                  } else { //取消分享
-                    self.preImg(imgUrl);
-                  }
-                }
-              });
+              wx.navigateTo({
+                url: '../../../common/previewimage/index?url=' + tempFilePath
+              })
             },
             fail(res){
-              console.log(res);
-              self.preImg(imgUrl);
+              //console.log(res);
             },
             complete(){
               self.setData({

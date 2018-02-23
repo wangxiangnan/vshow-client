@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -30,7 +30,7 @@
 					"id": 0,
 					"name": "回答页面测试",
 					"pathName": "pages/mine/page/vask/index",
-					"query": "id=59b8fcd61e471b1a5cf72f2c"
+					"query": "id=5999366f80dbfb42073256e6"
 				},
 				{
 					"id": -1,
@@ -168,6 +168,12 @@
 					"id": -1,
 					"name": "文字页面",
 					"pathName": "pages/word/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "预览图片",
+					"pathName": "pages/common/previewimage/index",
 					"query": ""
 				}
 			]

@@ -1,0 +1,5 @@
+<button
+  type="{{ type }}"
+  hover-class="button-hover"
+  bindtap="onSave"
+  ><slot></slot></button>
