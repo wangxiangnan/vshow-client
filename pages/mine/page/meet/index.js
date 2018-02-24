@@ -1,4 +1,4 @@
-const { imgDirUrl, getMeetListUrl, hostUrl, addMatchesUrl } = require('../../../../config');
+const { imgDirUrl, getMeetListUrl, staticHostUrl, addMatchesUrl } = require('../../../../config');
 const { NetRequest } = require('../../../../utils/util');
 const app = getApp();
 const data = {
@@ -133,7 +133,7 @@ Page({
           let { statusCode, data } = res;
           if (-statusCode === -200) {
             data.selList = data.selList.map(v => {
-              !/http/.test(v.avatarUrl) && (v.avatarUrl = hostUrl + v.avatarUrl);
+              !/http/.test(v.avatarUrl) && (v.avatarUrl = staticHostUrl + v.avatarUrl);
               return v;
             });
             self.setData({
@@ -200,6 +200,7 @@ Page({
     let { windowWidth } = app.getDevice();
     cardMoveX = cardMoveX + clientX - preClientX;
     cardMoveY = cardMoveY + clientY - preClientY;
+    //if (Math.abs(cardMoveX) < 10 && Math.abs(cardMoveY) < 10) return;
     cardData[curAniIndex].translateX = cardMoveX;
     cardData[curAniIndex].translateY = cardMoveY;
     let ratio = cardMoveX / (windowWidth * 0.4);

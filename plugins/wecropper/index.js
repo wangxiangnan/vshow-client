@@ -1,8 +1,13 @@
 /**
  * Created by sail on 2017/6/1.
  * 
- * 接受参数  oriImgUrl(初始化需要裁剪的图片), createBtnText(生成图片按钮的文字), hasUploadBtn(是否含有上传图片按钮), targetName(把裁剪后的图片链接赋值给app.globalData.targetName)
- * 默认值 oriImgUrl='', createBtnText ='', hasUploadBtn ='1' targetName=''
+ * 接受参数
+ * 1. oriImgUrl(初始化需要裁剪的图片) -- ''
+ * 2. createBtnText(生成图片按钮的文字) -- ''
+ * 3. hasUploadBtn(是否含有上传图片按钮) -- '1'
+ * 4. targetName(把裁剪后的图片链接赋值给app.globalData.targetName) -- ''
+ * 5. cutHeight(裁切的高度) -- 300
+ * 
  */
 import weCropper from './dist/weCropper.min.js';
 const app = getApp();
@@ -73,13 +78,24 @@ Page({
 		})
 	},
 	onLoad (option) {
-    let { oriImgUrl = '', createBtnText='', hasUploadBtn=true, targetName='' } = option;
-    //console.log(option);
+    let { oriImgUrl = '', createBtnText = '', hasUploadBtn = true, targetName = '', cutHeight } = option;
+    console.log(option);
     
-    this.setData({
-      createBtnText, hasUploadBtn, targetName,
-      
-    });
+    if (cutHeight){
+      this.setData({
+        createBtnText, hasUploadBtn, targetName, 'cropperOpt.cut': {
+          x: (width - 300) / 2,
+          y: (height - cutHeight) / 2,
+          width: 300,
+          height: cutHeight*1
+        }
+      });
+    }else{
+      this.setData({
+        createBtnText, hasUploadBtn, targetName
+      });
+    }
+    
     const { cropperOpt } = this.data;
 		new weCropper(cropperOpt)
 			.on('ready', (ctx) => {

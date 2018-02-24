@@ -27,9 +27,9 @@ Page({
         icon: `${imgDirUrl}wwx_zp.png`
       }, {
         id: 4,
-        name: '联系微V秀',
+        name: '关于微V秀',
         bgColor: '#b4e087',
-        url: './page/aboutus/aboutus',
+        url: './page/aboutus/index',
         icon: `${imgDirUrl}wwx_fx.png`
       }]
   },

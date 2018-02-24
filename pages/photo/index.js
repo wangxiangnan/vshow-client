@@ -2,14 +2,22 @@ let { imgDirUrl } = require('../../config.js');
 const data = {
   icon_saw: imgDirUrl + 'eye.png',
   photoList: [
-    {
+    /*{
       url: 'handwritten/index',
       avatarUrl: '/img/avatar.jpg',
-      text: '手写板',
+      text: '为我代言',
       imgPath: `${imgDirUrl}handwritten.png`,
       sawNum: 0,
       time: '2018-02-23',
       pid: 0
+    },*/{
+      url: 'handwritten/index',
+      avatarUrl: '/img/avatar.jpg',
+      text: '个性涂鸦',
+      imgPath: `${imgDirUrl}handwritten.png`,
+      sawNum: 0,
+      time: '2018-02-23',
+      pid: 1
     },{
     url: 'speciallist/index',
     avatarUrl: '/img/avatar.jpg',
@@ -17,7 +25,7 @@ const data = {
     imgPath: `${imgDirUrl}banner_factory.jpg`,
     sawNum: 0,
     time: '2017-09-26',
-    pid: 1
+    pid: 2
   },{
     url: 'makeword/index',
       avatarUrl: '/img/avatar.jpg',
@@ -25,7 +33,7 @@ const data = {
       imgPath: `${imgDirUrl}wenzi.jpg`,
       sawNum: 0,
       time: '2017-09-15',
-      pid: 2
+      pid: 3
     },{
       url: 'makeletter/makeletter',
       avatarUrl: '/img/avatar.jpg',
@@ -33,7 +41,7 @@ const data = {
       imgPath: `${imgDirUrl}jzrm_1.jpg`,
       sawNum: 0,
       time: '2017-06-27',
-      pid: 3
+      pid: 4
     }, {
       url: 'makebarrage/makebarrage?title=疯狂弹幕',
       avatarUrl: '/img/avatar.jpg',
@@ -41,7 +49,7 @@ const data = {
       imgPath: `${imgDirUrl}tanmu_1.jpg`,
       sawNum: 0,
       time: '2017-04-20',
-      pid: 4
+      pid: 5
     }/*, {
       url: 'make/make',
       avatarUrl: '',

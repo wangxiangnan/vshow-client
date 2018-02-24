@@ -12,9 +12,12 @@
 
     "pages/word/index",
     "pages/word/page/make/make",
+
     "pages/test/index",
     "pages/test/page/boxmodel/boxmodel",
     "pages/test/page/temp/temp",
+    "pages/test/page/suitable/index",
+
     "pages/tools/split",
     "plugins/wecropper/index",
 
@@ -23,6 +26,10 @@
     "pages/mine/index",
     "pages/mine/page/leaveword/index",
     "pages/mine/page/sendleaveword/index",
+
+    "pages/mine/page/aboutus/index",
+
+
     "pages/mine/page/vtestpaper/index",
     "pages/mine/page/vask/index",
     "pages/mine/page/reslist/index",

@@ -24,7 +24,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 26,
 			"list": [
 				{
 					"id": 0,
@@ -180,6 +180,12 @@
 					"id": -1,
 					"name": "发送留言",
 					"pathName": "pages/mine/page/sendleaveword/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "合适吗",
+					"pathName": "pages/test/page/suitable/index",
 					"query": ""
 				}
 			]

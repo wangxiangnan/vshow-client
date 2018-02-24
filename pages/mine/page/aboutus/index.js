@@ -3,20 +3,16 @@ const data = {
   subwayMapUrl: `${imgDirUrl}/subway_map.jpg`,
   fnList: [{
     id: 0,
-    title: '北京地铁线路图',
-    desc: '2017年最新的北京地铁线路图'
+    title: '为我们代言',
+    desc: '生成您的私人代言微V秀海报'
   }, {
       id: 1,
-      title: '裁剪工具1',
-      desc: '裁切比例: 1:1，用途：制作头像等'
+      title: '私信我们',
+      desc: '吐槽、建议、赞美、抨击，都可以私信我们'
     }, {
       id: 2,
-      title: '裁剪工具2',
-      desc: '裁切比例: 4:3，手机常用比例'
-    },{
-    id: 3,
-    title: '寻觅',
-    desc: '通过头像遇见更好的遇见吧'
+      title: '最新公告',
+      desc: '一些最新动态会在这里展示'
     }]
 }
 
