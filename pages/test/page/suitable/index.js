@@ -111,6 +111,9 @@ Page({
     let self = this,
       movableViewX,
       movableViewY;
+      wx.showLoading({
+        title: '生成中...',
+      })
     let { 
       avatarUrl,
       qrcodeUrl,
@@ -194,15 +197,22 @@ Page({
 
       ctx.draw();
 
-      wx.canvasToTempFilePath({
-        canvasId: 'canvas',
-        success(res){
-          let imgUrl = res.tempFilePath;
-          wx.previewImage({
-            urls: [imgUrl],
-          })
-        }
-      }, this)
+      setTimeout(() => {
+        wx.canvasToTempFilePath({
+          canvasId: 'canvas',
+          success(res) {
+            let imgUrl = res.tempFilePath;
+            wx.previewImage({
+              urls: [imgUrl],
+            })
+          },
+          complete(){
+            wx.hideLoading();
+          }
+        })
+      }, 300);
+
+      
     }
     
   }

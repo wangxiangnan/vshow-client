@@ -1,3 +1,4 @@
+const { addLeaveWords } = require('../../../../config');
 const data = {
   fnList: [{
     id: 0,
@@ -28,7 +29,7 @@ Page({
       break;
       case 1:   //吐槽我们
         wx.navigateTo({
-          url: '../../../common/textarea/index',
+          url: '../../../common/textarea/index?url=' + addLeaveWords,
         })
         break;
 

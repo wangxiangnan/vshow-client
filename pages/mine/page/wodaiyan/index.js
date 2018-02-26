@@ -171,13 +171,17 @@ Page({
         canvasId: 'canvas',
 
         success(res) {
-          wx.hideLoading();
+          
           let imgUrl = res.tempFilePath;
           wx.navigateTo({
             url: '/pages/common/previewimage/index?url=' + imgUrl
           });
+        },
+
+        complete(){
+          wx.hideLoading();
         }
-      }, this)
+      })
     }, 300);
 
    

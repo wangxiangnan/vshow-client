@@ -1,34 +1,34 @@
-const { addLeaveWords } = require('../../../config');
 const { NetRequest, showTips } = require('../../../utils/util');
 Page({
 
-  data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad(options) {
+    let { url }  = options;
+    this.setData({
+      url: url
+    });
   },
 
   sendLetter(e){
     let { letter } = e.detail.value;
+    let { url } = this.data;
     letter = letter.trim();
+    if (!url) return wx.showToast({
+      title: '路径错误',
+      image: '/img/prompt.png'
+    });
     if(!letter) return wx.showToast({
       title: '没有输入文字！',
       image: '/img/prompt.png'
     });
 
     NetRequest({
-      url: addLeaveWords,
+      url: url,
       method: 'POST',
       data: {
         letter: letter
       },
       success(res) {
-        console.log(res);
+        //console.log(res);
         let { statusCode, data } = res;
         if (-statusCode === -200) {
           showTips('上传成功!', true);
