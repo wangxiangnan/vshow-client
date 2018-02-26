@@ -17,6 +17,7 @@
       <navigator wx:for="{{mineList}}" url="{{item.url}}" hover-class="item_active" wx:key="{{item.id}}" style="background-color: {{item.bgColor}}" class="mine-item relative">
         <text class="list_text absolute">{{item.name}}</text>
         <image src="{{item.icon}}" mode="widthFix" class="absolute item_icon"></image>
+        <button class="contact_btn" open-type="contact" wx:if="{{ item.id === 2 }}">进入客服会话</button>
       </navigator>
     </view>
   </view>
