@@ -15,9 +15,9 @@ Page({
       icon: `${imgDirUrl}wwx_cy.png`
     }, {
       id: 2,
-      name: '留言板',
+      name: '在线客服',
       bgColor: '#ffa648',
-      url: './page/leaveword/index',
+      url: '',  //./page / leaveword / index
       icon: `${imgDirUrl}wwx_sy.png`
       }, {
         id: 3,

@@ -1,20 +1,24 @@
 <view class="suitable">
   <view class="suitable-card-bg">
-    <view class="suitable-card">
-      <image class="banner" src="{{avatarUrl}}" mode="widthFix"  />
-      <view class="movable-area">
-        <view
+    <view class="suitable-card" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;">
+      <image class="banner" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;" src="{{avatarUrl}}"  />
+      <movable-area
+        class="movable-area"
+        style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"
+
+      >
+        <movable-view
           class="movable-view"
-          catchtouchstart="onTouchStart"
-          catchtouchmove="onTouchMove"
-          catchtouchend="onTouchEnd"
+          direction="vertical"
+          inertia
+          x="10"
           style="right: {{right}}px; bottom: {{bottom}}px"
         
         >
-          <text>{{tipsText}}</text>
+          <text class="tips-text">{{tipsText}}</text>
            <image src="{{qrcodeUrl}}" class="qrcode" mode="widthFix" />
-        </view>
-      </view>
+        </movable-view>
+      </movable-area>
     </view>
   </view>
 
@@ -37,4 +41,7 @@
 </view>
 
 
-<canvas style="width: 300px; height: 400px;" canvas-id="canvas"></canvas>
+<canvas 
+  style="width: {{canvasWidth}}px; height: {{canvasHeight}}px; position: absolute; left: -10000px;"
+  canvas-id="canvas"
+></canvas>

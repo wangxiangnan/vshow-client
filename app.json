@@ -22,14 +22,14 @@
     "plugins/wecropper/index",
 
     "pages/common/previewimage/index",
+    "pages/common/textarea/index",
 
     "pages/mine/index",
     "pages/mine/page/leaveword/index",
     "pages/mine/page/sendleaveword/index",
 
     "pages/mine/page/aboutus/index",
-
-
+    "pages/mine/page/wodaiyan/index",
     "pages/mine/page/vtestpaper/index",
     "pages/mine/page/vask/index",
     "pages/mine/page/reslist/index",

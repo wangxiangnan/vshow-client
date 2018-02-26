@@ -10,13 +10,6 @@
       </view>
     </view>
 
-    <!--<view class="weui_panel_ft">
-      <view class="weui_cell weui_cell_link">
-        <view class="weui_cell_bd">查看更多</view>
-        <view class="weui_cell_ft weui_cell_in_access"></view>
-      </view>
-    </view>-->
-
   </view>
 
 </view>

@@ -5,7 +5,7 @@ const data = {
     /*{
       url: 'handwritten/index',
       avatarUrl: '/img/avatar.jpg',
-      text: '为我代言',
+      text: '美图佳句',
       imgPath: `${imgDirUrl}handwritten.png`,
       sawNum: 0,
       time: '2018-02-23',
