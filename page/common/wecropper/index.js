@@ -55,7 +55,7 @@ Page({
           return wx.navigateBack();
         }
         wx.navigateTo({
-          url: '../../pages/common/previewimage/index?url=' + src
+          url: '/page/common/previewimage/index?url=' + src
         })
 			} else {
 				console.log('获取图片地址失败，请稍后重试')
@@ -126,7 +126,7 @@ Page({
   onShareAppMessage() {
     return {
       title: '一起来玩转微V秀吧',
-      path: '/pages/photo/index'
+      path: '/page/tabBar/photo/index'
     }
   }
 })

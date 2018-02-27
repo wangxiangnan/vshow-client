@@ -34,13 +34,13 @@ Page({
       break;
       case 1:   //图片裁剪1
         wx.navigateTo({
-          url: '/plugins/wecropper/index',
+          url: '/page/common/wecropper/index',
         })
         break;
 
       case 2:   //图片裁剪2
         wx.navigateTo({
-          url: '/plugins/wecropper/index?cutHeight=400',
+          url: '/page/common/wecropper/index?cutHeight=400',
         })
         break;
 
@@ -56,7 +56,7 @@ Page({
   onShareAppMessage() {
     return {
       title: '一起来玩转微V秀吧',
-      path: '/pages/photo/index'
+      path: '/page/tabBar/photo/index'
     }
   }
 })

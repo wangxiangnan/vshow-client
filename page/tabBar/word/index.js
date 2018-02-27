@@ -1,5 +1,5 @@
 // pages/find/find.js
-let { imgDirUrl } = require('../../config.js');
+let { imgDirUrl } = require('../../../config.js');
 const data = {
   wordBgUrl: `${imgDirUrl}word_bg.jpg`,
   wordList: [{

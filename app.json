@@ -22,7 +22,7 @@
         "pages/makespecial/index",
         "pages/speciallist/index",
         "pages/makeword/index",
-        "pages/makebarrage/index",
+        "pages/makemotto/index",
         "pages/makeletter/makeletter"
       ]
     }, {

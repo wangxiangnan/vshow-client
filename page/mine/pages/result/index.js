@@ -30,17 +30,11 @@ Page({
       // 来自页面内转发按钮
       console.log(res.target)
     }
-    console.log(imgDirUrl);
+    //console.log(imgDirUrl);
     return {
       title: `来自${nickName}的一个问题`,
-      path: `/pages/mine/page/vask/index?id=${_id}`,
-      imageUrl: `${imgDirUrl}share_banner.jpg`,
-      success: function (res) {
-        // 转发成功
-      },
-      fail: function (res) {
-        // 转发失败
-      }
+      path: `/page/mine/pages/vask/index?id=${_id}`,
+      imageUrl: `${imgDirUrl}share_banner.jpg`
     }
   }
 })

@@ -271,40 +271,23 @@ class MakeLetter{
       ctx.fillText(v, contX, contY + mul*i);
     });
     ctx.draw();
-    wx.canvasToTempFilePath({
-      canvasId: 'myCanvas',
-      success(res){
-        let imgUrl = res.tempFilePath;
-        self.pageCtx.setData({
-          disabled: false,
-          creBtnTxt: '生成图片'
-        });
-        wx.navigateTo({
-          url: '../../../common/previewimage/index?url=' + imgUrl
-        })
-        /*wx.showModal({
-          title: '生成完成',
-          content: '是否发表到V友圈',
-          success(res){
-            if(res.confirm){
-              wx.navigateTo({
-                url: `/pages/mine/page/addmood/index?imgUrl=${imgUrl}`,
-              })
-            }else{
-              wx.previewImage({
-                urls: [imgUrl]
-              });
-            }
-          },
-          fail(){
-            wx.previewImage({
-              urls: [imgUrl]
-            });
-          }
-        })*/
-        
-      }
-    })
+    setTimeout(() => {
+      wx.canvasToTempFilePath({
+        canvasId: 'myCanvas',
+        success(res) {
+          let imgUrl = res.tempFilePath;
+          self.pageCtx.setData({
+            disabled: false,
+            creBtnTxt: '生成图片'
+          });
+          wx.navigateTo({
+            url: '../../../common/previewimage/index?url=' + imgUrl
+          })
+
+        }
+      })
+    },300);
+    
 
 
 

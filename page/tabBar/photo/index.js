@@ -1,4 +1,4 @@
-let { imgDirUrl } = require('../../config.js');
+let { imgDirUrl } = require('../../../config.js');
 const data = {
   icon_saw: imgDirUrl + 'eye.png',
   photoList: [

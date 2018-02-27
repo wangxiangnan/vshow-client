@@ -6,7 +6,7 @@
 
   <view class="word-bd">
     <view class="menu">
-      <navigator wx:for="{{wordList}}" wx:key="{{item.key}}" url="page/{{item.url}}?title={{item.text}}&pid={{item.pid}}" style="background-image: url({{item.imgPath}})" class="menu-item tc" ></navigator>
+      <navigator wx:for="{{wordList}}" wx:key="{{item.key}}" url="/page/word/pages/{{item.url}}?title={{item.text}}&pid={{item.pid}}" style="background-image: url({{item.imgPath}})" class="menu-item tc" ></navigator>
     </view>
   </view>
 

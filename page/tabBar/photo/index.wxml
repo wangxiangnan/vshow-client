@@ -1,7 +1,14 @@
 <view class="photo-bg full_page"></view>
 <view class="photo">
   <view class="photo_list relative">
-    <navigator wx:for="{{photoList}}" wx:key="{{item.pid}}" data-index="{{ index }}" bindtap="recSawNum" class="photo_item bgf" url="./page/{{item.url}}">
+    <navigator
+      wx:for="{{photoList}}"
+      wx:key="{{item.pid}}"
+      data-index="{{ index }}"
+      bindtap="recSawNum"
+      class="photo_item bgf"
+      url="/page/photo/pages/{{item.url}}"
+    >
       <view class="photo_item_hd f15">
         <image class="author_avatar" src="{{item.avatarUrl}}"></image>
         <text class="author_name">{{item.text}}</text>

@@ -67,7 +67,7 @@ Page({
       sizeType: ['original'],
       success(res) {
         wx.navigateTo({
-          url: `/plugins/wecropper/index?targetName=${targetName}&cutHeight=${cutHeight}&oriImgUrl=${res.tempFilePaths[0]}`,
+          url: `/page/common/wecropper/index?targetName=${targetName}&cutHeight=${cutHeight}&oriImgUrl=${res.tempFilePaths[0]}`,
         })
       }
     })
@@ -174,7 +174,7 @@ Page({
           
           let imgUrl = res.tempFilePath;
           wx.navigateTo({
-            url: '/pages/common/previewimage/index?url=' + imgUrl
+            url: '/page/common/previewimage/index?url=' + imgUrl
           });
         },
 

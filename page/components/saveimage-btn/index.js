@@ -34,17 +34,39 @@ Component({
       if(!url.trim()) return wx.showToast({
         title: '路径不能为空!',
         image: '/img/prompt.png'
+      });
+
+      wx.getSetting({
+        success: (res) => {
+          if (res.authSetting['scope.writePhotosAlbum']){  //获取保存到相册权限成功
+            self.saveImageToPhotosAlbum(url);
+          } else {  //获取保存到相册权限失败
+            wx.openSetting({
+              success: (res) => {
+                if (res.authSetting['scope.writePhotosAlbum']) {
+                  self.saveImageToPhotosAlbum(url);
+                }
+              }
+            })
+          }
+        }
       })
+
+      
+
+    },
+
+    saveImageToPhotosAlbum(url){
       wx.saveImageToPhotosAlbum({
         filePath: url,
-        success(){
+        success() {
           wx.showModal({
             title: '保存成功',
             showCancel: false
           })
 
         },
-        fail(res){
+        fail(res) {
           console.log(res);
           wx.showToast({
             title: '保存失败!',
@@ -53,7 +75,6 @@ Component({
         }
 
       })
-
     }
   }
 })

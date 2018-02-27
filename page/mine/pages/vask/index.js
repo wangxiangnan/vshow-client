@@ -26,7 +26,7 @@ Page({
       showTips('问题出现错误');
       setTimeout(()=>{
         wx.switchTab({
-          url: '/pages/mine/index',
+          url: '/page/tabBar/mine/index',
         });
       }, 1000);
       
@@ -57,7 +57,7 @@ Page({
           showTips('获取问题失败');
           setTimeout(() => {
             wx.switchTab({
-              url: '/pages/mine/index',
+              url: '/page/tabBar/mine/index',
             });
           }, 1000);
         }
@@ -66,7 +66,7 @@ Page({
         showTips('获取问题失败');
          setTimeout(() => {
           wx.switchTab({
-            url: '/pages/mine/index',
+            url: '/page/tabBar/mine/index',
           });
         }, 1000);
       },
@@ -100,7 +100,7 @@ Page({
       showTips('登录失败,请重新登录');
       return setTimeout(() => {
         wx.switchTab({
-          url: '/pages/mine/index',
+          url: '/page/tabBar/mine/index',
         });
       }, 1000);
     }
@@ -122,7 +122,7 @@ Page({
           showTips('恭喜,回答成功');
           setTimeout(()=> {
             wx.switchTab({
-              url: '/pages/mine/index',
+              url: '/page/tabBar/mine/index',
             });
           }, 1000);
         }else{

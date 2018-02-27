@@ -1,6 +1,6 @@
 const app = getApp();
-let { imgDirUrl, editAvatarUrl, staticHostUrl } = require('../../config.js');
-let { NetUploadFile, showTips } = require('../../utils/util');
+let { imgDirUrl, editAvatarUrl, staticHostUrl } = require('../../../config.js');
+let { NetUploadFile, showTips } = require('../../../utils/util');
 Page({
   data: {
     defaultAvatarUrl: `${imgDirUrl}defalt_avatar.png`,
@@ -11,7 +11,7 @@ Page({
       id: 1,
       name: '更多功能',
       bgColor: '#fe6a6a',
-      url: './page/extrafns/extrafns',
+      url: '/page/mine/pages/extrafns/extrafns',
       icon: `${imgDirUrl}wwx_cy.png`
     }, {
       id: 2,
@@ -23,13 +23,13 @@ Page({
         id: 3,
         name: '你问她答',
         bgColor: '#6cacf4',
-        url: './page/vtestpaper/index',
+        url: '/page/mine/pages/vtestpaper/index',
         icon: `${imgDirUrl}wwx_zp.png`
       }, {
         id: 4,
         name: '关于微V秀',
         bgColor: '#b4e087',
-        url: './page/aboutus/index',
+        url: '/page/mine/pages/aboutus/index',
         icon: `${imgDirUrl}wwx_fx.png`
       }]
   },

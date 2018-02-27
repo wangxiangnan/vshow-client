@@ -1,4 +1,4 @@
-@import "/common/make.wxss";
+@import '/page/common/lib/make.wxss'
 .textarea{padding: 15px; box-sizing: border-box; width: 100%; height: 280px;}
 .select-style{margin-top: 42rpx; color: #898989; line-height: 1}
 .style-list{margin-top: 20rpx; height: 72px}
