@@ -1,51 +1,69 @@
 {
   "pages": [
-    "pages/photo/index",
-    "pages/photo/page/makebarrage/makebarrage",
-    "pages/photo/page/makeletter/makeletter",
-    "pages/photo/page/makeposter/makeposter",
-    "pages/photo/page/makespecial/index",
-    "pages/photo/page/speciallist/index",
-    "pages/photo/page/makeword/index",
-    "pages/photo/page/handwritten/index",
-    "pages/photo/page/makemotto/index",
 
+    "page/tabBar/photo/index",
+    "page/tabBar/word/index",
+    "page/tabBar/mine/index",
 
-    "pages/word/index",
-    "pages/word/page/make/make",
+    "page/common/wecropper/index",
+    "page/common/previewimage/index",
+    "page/common/textarea/index"
+    
 
-    "pages/test/index",
-    "pages/test/page/boxmodel/boxmodel",
-    "pages/test/page/temp/temp",
-    "pages/test/page/suitable/index",
-
-    "pages/tools/split",
-    "plugins/wecropper/index",
-
-    "pages/common/previewimage/index",
-    "pages/common/textarea/index",
-
-    "pages/mine/index",
-    "pages/mine/page/leaveword/index",
-    "pages/mine/page/sendleaveword/index",
-
-    "pages/mine/page/aboutus/index",
-    "pages/mine/page/wodaiyan/index",
-    "pages/mine/page/vtestpaper/index",
-    "pages/mine/page/vask/index",
-    "pages/mine/page/reslist/index",
-    "pages/mine/page/result/index",
-    "pages/mine/page/vquiz/index",
-    "pages/mine/page/secret/index",
-    "pages/mine/page/meet/index",
-    "pages/mine/page/meet/pages/show/index",
-    "pages/mine/page/meet/pages/edit/index",
-    "pages/mine/page/meet/pages/mine/index",
-    "pages/mine/page/meet/pages/result/index",
-    "pages/mine/page/meet/pages/list/index",
-    "pages/mine/page/meet/pages/chat/index",
-    "pages/mine/page/extrafns/extrafns"
   ],
+
+  "subPackages": [
+    {
+      "root": "page/photo/",
+      "pages": [
+        "pages/makebarrage/makebarrage",
+        "pages/makeposter/makeposter",
+        "pages/handwritten/index",
+        "pages/makespecial/index",
+        "pages/speciallist/index",
+        "pages/makeword/index",
+        "pages/makebarrage/index",
+        "pages/makeletter/makeletter"
+      ]
+    }, {
+      "root": "page/word/",
+      "pages": [
+        "pages/make/make"
+      ]
+    }, {
+      "root": "page/mine/",
+      "pages": [
+        "pages/leaveword/index",
+        "pages/sendleaveword/index",
+        "pages/aboutus/index",
+        "pages/wodaiyan/index",
+        "pages/vtestpaper/index",
+        "pages/vask/index",
+        "pages/reslist/index",
+        "pages/result/index",
+        "pages/vquiz/index",
+        "pages/secret/index",
+        "pages/meet/index",
+        "pages/meet/pages/show/index",
+        "pages/meet/pages/edit/index",
+        "pages/meet/pages/mine/index",
+        "pages/meet/pages/result/index",
+        "pages/meet/pages/list/index",
+        "pages/meet/pages/chat/index",
+        "pages/extrafns/extrafns"
+      ]
+    }, {
+      "root": "page/test/",
+      "pages": [
+        "index",
+        "pages/boxmodel/boxmodel",
+        "pages/suitable/index",
+        "pages/split/split",
+        "pages/temp/temp"
+      ]
+    }
+  ],
+
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#c73564",
@@ -55,19 +73,19 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/photo/index",
+        "pagePath": "page/tabBar/photo/index",
         "text": "图片",
         "iconPath": "img/photo.png",
         "selectedIconPath": "img/selected_photo.png"
       },
       {
-        "pagePath": "pages/word/index",
+        "pagePath": "page/tabBar/word/index",
         "text": "文字",
         "iconPath": "img/pen.png",
         "selectedIconPath": "img/selected_pen.png"
       },
       {
-        "pagePath": "pages/mine/index",
+        "pagePath": "page/tabBar/mine/index",
         "text": "我的",
         "iconPath": "img/mine.png",
         "selectedIconPath": "img/selected_mine.png"
