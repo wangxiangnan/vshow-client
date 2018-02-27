@@ -2,15 +2,15 @@ let { imgDirUrl } = require('../../config.js');
 const data = {
   icon_saw: imgDirUrl + 'eye.png',
   photoList: [
-    /*{
-      url: 'handwritten/index',
+    {
+      url: 'makemotto/index',
       avatarUrl: '/img/avatar.jpg',
       text: '美图佳句',
-      imgPath: `${imgDirUrl}handwritten.png`,
+      imgPath: `${imgDirUrl}poster_motto.png`,
       sawNum: 0,
       time: '2018-02-23',
       pid: 0
-    },*/{
+    },{
       url: 'handwritten/index',
       avatarUrl: '/img/avatar.jpg',
       text: '个性涂鸦',
@@ -102,11 +102,7 @@ Page({
 
   onShareAppMessage(){
     return({
-      title: '一起来体验吧',
-      path: 'pages/photo/index',
-      success(res){
-        console.log(res);
-      }
+      title: '一起来制作个性图片吧'
     });
   },
 

@@ -122,5 +122,11 @@ Page({
 			.updateCanvas();
     oriImgUrl && (this.wecropper.pushOrign(oriImgUrl));  //如果初始化传入照片则写入
       
-	}
+  },
+  onShareAppMessage() {
+    return {
+      title: '一起来玩转微V秀吧',
+      path: '/pages/photo/index'
+    }
+  }
 })

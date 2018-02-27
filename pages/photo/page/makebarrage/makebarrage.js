@@ -352,5 +352,11 @@ Page({
       title,
     })
     canvas.init(this);   //canvas的初始化
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '一起制作弹幕吧'
+    }
   }
 })

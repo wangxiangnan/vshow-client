@@ -194,5 +194,11 @@ Page({
       }
     })
     
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '一起走进美图的海洋吧'
+    }
   }
 })

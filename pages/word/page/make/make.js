@@ -62,5 +62,11 @@ Page({
     let {title, pid} = options;
     wx.setNavigationBarTitle({title});
     this.setData({pid});
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '一起来感受文字的魅力吧'
+    }
   }
 })

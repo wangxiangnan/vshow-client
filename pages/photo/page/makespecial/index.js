@@ -96,20 +96,12 @@ Page({
       }
     });
 
-  }/*,
+  },
 
-  onShareAppMessage: function () {  //转发
-    let { item: { id, title } } = this.data;
+  onShareAppMessage() {
     return {
-      title: '一起来制作 ' + title,
-      path: '/pages/photo/page/makespecial/index?pid=' + id,
-      success: function (res) {
-        // 转发成功
-      },
-      fail: function (res) {
-        // 转发失败
-      }
+      title: '一起制作炫酷文字吧'
     }
-  }*/
+  }
 
 })

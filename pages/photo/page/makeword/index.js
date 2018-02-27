@@ -145,5 +145,11 @@ Page({
 
       break;
     }
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '一起制作文字转图吧'
+    }
   }
 })

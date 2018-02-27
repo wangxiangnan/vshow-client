@@ -185,5 +185,11 @@ Page({
     }, 300);
 
    
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '一起来为微V秀代言吧'
+    }
   }
 })

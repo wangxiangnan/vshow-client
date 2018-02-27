@@ -368,5 +368,11 @@ Page({
       preIndex = index;  //执行完毕，更新索引上一个为这个
     }
 
-  }()
+  }(),
+
+  onShareAppMessage() {
+    return {
+      title: '一起制作书信吧'
+    }
+  }
 })

@@ -15,5 +15,11 @@ const data = {
   }]
 }
 Page({
-  data
+  data,
+
+  onShareAppMessage() {
+    return {
+      title: '一起制作美图佳句吧'
+    }
+  }
 })

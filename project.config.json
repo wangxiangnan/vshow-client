@@ -24,7 +24,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 26,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
@@ -129,18 +129,6 @@
 					"query": ""
 				},
 				{
-					"id": 18,
-					"name": "医生认证",
-					"pathName": "pages/doctor/pages/authorize/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "钱包",
-					"pathName": "pages/doctor/pages/wallet/index",
-					"query": ""
-				},
-				{
 					"id": 20,
 					"name": "私信列表",
 					"pathName": "pages/doctor/pages/letterlist/index",
@@ -192,6 +180,12 @@
 					"id": -1,
 					"name": "我代言",
 					"pathName": "pages/mine/page/wodaiyan/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "美图佳句",
+					"pathName": "pages/photo/page/makemotto/index",
 					"query": ""
 				}
 			]
