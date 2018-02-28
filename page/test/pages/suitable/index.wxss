@@ -2,8 +2,7 @@ page{
   background-color: #eee;
 }
 .suitable-card-bg{
-  padding: 17px 0 19px;
-  background-color: #fff;
+  padding-top: 4%;
 }
 .suitable-card{
   margin-left: auto;
@@ -45,13 +44,12 @@ page{
 
 .suitable-tips,
 .suitable-btns{
-  margin-top: 9px;
-  background-color: #fff;
+  margin-top: 8%;
 }
 .suitable-tips{
-  font-size: 21px;
-  line-height: 2.52em;
-  height: 2.52em;
+  font-size: 20px;
+  line-height: 2em;
+  height: 2em;
   color: #7fe8e2;
   white-space: nowrap;
   overflow: hidden;
@@ -60,25 +58,25 @@ page{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding-top: 6%;
-  padding-bottom: 9%;
+  /*padding-top: 3%;
+  padding-bottom: 3%;*/
 }
 .btn-replace,
 .btn-preview{
-  font-size: 21px;
-  line-height: 2.19em;
-  height: 2.19em;
-  width: 37.33%;
+  font-size: 15px;
+  line-height: 2.6em;
+  height: 2.6em;
+  width: 41%;
   text-align: center;
-  border: 1px solid #ade9ff;
-  border-radius: 50px;
-  box-shadow: 1px 1px 4px #ade9ff;
+  border: 1px solid #1aad19;
+  border-radius: 20px;
 }
 .btn-replace{
-  color: #ade9ff;
+  color: #1aad19;
+  background-color: #fff
 }
 .btn-preview{
-  background-color: #ade9ff;
+  background-color: #1aad19;
   color: #fff;
 }
 .btn-hover{

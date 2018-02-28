@@ -1,7 +1,0 @@
-<button
-  type="{{ type }}"
-  hover-class="button-hover"
-  open-type="share"
->
-  <slot></slot>
-</button>

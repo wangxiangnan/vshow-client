@@ -3,9 +3,8 @@
     <image class="image" bindtap="onClick" mode="widthFix" src="{{ imgUrl }}"></image>
   </view>
   <view class="btns">
-    <saveimage-btn type="primary" url="{{ imgUrl }}">保存到相册</saveimage-btn >
-    <view class="gap"></view>
-    <share-btn type="default">邀请朋友玩</share-btn>
+    <button class="save-image btn"  bindtap="saveImage">保存到相册</button >
+    <button class="share-btn btn" open-type="share"> 邀请朋友玩</button>
   </view>
   
 </view>

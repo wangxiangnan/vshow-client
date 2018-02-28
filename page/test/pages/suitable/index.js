@@ -10,8 +10,12 @@ Page({
     maxCanvasHeight: 300,
     avatarUrl: '/img/test_bg.png',
     qrcodeUrl: `${imgDirUrl}/test_qrcode.png`,
-    tipsText: '这个头像合适吗',
+    tipsText: '这个头像合适么',
     targetName: 'suitable',
+    cutHeight: 400,
+
+    tipsTextList: ['这个头像合适么', '这件衣服合适么', '这个发型合适么', '你觉得我合适么'],
+    themeList: ['换个文字', '换个图片(1:1)', '换个图片(4:3)'],
 
     sliderInfo: { //滑块的信息
       right: 0,
@@ -29,14 +33,51 @@ Page({
     
   },
 
-  onReplace(){
+  onLoad(){
+    this.setCanvasProps();
+  },
+
+  getDevice(){
+    !this.data.device && (this.setData({
+      device: wx.getSystemInfoSync()
+    }));
+
+    return this.data.device;
+  },
+
+  setCanvasProps(){
+    let { cutHeight } = this.data;
+    let { windowWidth } = this.getDevice();
+
+    switch (cutHeight) {
+      case 300: {
+        return this.setData({
+          canvasWidth: windowWidth - 20,
+          canvasHeight: windowWidth - 20
+        });
+      }
+
+      case 400: {
+        return this.setData({
+          canvasWidth: windowWidth - 20,
+          canvasHeight: (windowWidth - 20) * 4 / 3
+        });
+      }
+    }
+  },
+
+  onSelectImage(){
     let self = this,
-        targetName = this.data.targetName;
+      { targetName, cutHeight} = this.data;
     wx.chooseImage({
       count: 1,
       sizeType: ['original'],
       success: function(res) {
         let tempFilePath = res.tempFilePaths[0];
+        //裁切图片
+        wx.navigateTo({
+          url: `/page/common/wecropper/index?targetName=${targetName}&cutHeight=${cutHeight}&oriImgUrl=${tempFilePath}`,
+        });return;
         wx.getImageInfo({
           src: tempFilePath,
           success(res){
@@ -80,11 +121,8 @@ Page({
           }
         })
         
-        /*
-        * 裁切图片
-        wx.navigateTo({
-          url: `/plugins/wecropper/index?targetName=${targetName}&cutHeight=${cutHeight}&oriImgUrl=${tempFilePath}`,
-        })*/
+        
+        
       }
     })
   },
@@ -103,11 +141,51 @@ Page({
       this.setData({
         avatarUrl: avatarUrl
       });
+      this.setCanvasProps();
       app.globalData[this.data.targetName] = null;
     }
   },
 
+  onReplace(){  //更换主题时
+    let self = this;
+    let { tipsTextList, themeList, tipsText } = self.data;
+    wx.showActionSheet({
+      itemList: themeList,
+      success(res){
+        switch(res.tapIndex){
+          case 0: //更改文字
+            let nextIndex = (tipsTextList.indexOf(tipsText) + 1) % tipsTextList.length;
+            let resultText = tipsTextList[nextIndex];
+            self.setData({
+              tipsText: resultText
+            });
+          break;
+
+          case 1: //更换图片 1:1
+            self.setData({
+              cutHeight: 300
+            });
+            self.onSelectImage();
+          break;
+
+          case 2: //更换图片 4:3
+            self.setData({
+              cutHeight: 400
+            });
+            self.onSelectImage();
+          break;
+
+
+        }
+      }
+    })
+  },
+
   onPreview(){
+    this.draw();
+  },
+
+  draw(){ //canvas画图
     let self = this,
       movableViewX,
       movableViewY;
@@ -119,6 +197,7 @@ Page({
       qrcodeUrl,
       canvasWidth,
       canvasHeight,
+      tipsText,
       sliderInfo: {
         sliderWidth,
         sliderHeight,
@@ -189,7 +268,7 @@ Page({
       //画文字
       ctx.setFontSize(23);
       ctx.setFillStyle('#ffffff');
-      ctx.fillText('这个头像合适么', movableViewX + textGapX, movableViewY + textGapY);
+      ctx.fillText(tipsText, movableViewX + textGapX, movableViewY + textGapY);
 
       //画二维码
 
@@ -202,9 +281,12 @@ Page({
           canvasId: 'canvas',
           success(res) {
             let imgUrl = res.tempFilePath;
-            wx.previewImage({
-              urls: [imgUrl],
+            wx.navigateTo({
+              url: '/page/common/previewimage/index?url=' + imgUrl,
             })
+            /*wx.previewImage({
+              urls: [imgUrl],
+            })*/
           },
           complete(){
             wx.hideLoading();

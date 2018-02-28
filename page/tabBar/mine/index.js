@@ -132,12 +132,10 @@ Page({
             sizeType: ['compressed'],
             success(res) { //res.tempFilePaths
               wx.navigateTo({
-                url: `/plugins/wecropper/index?oriImgUrl=${res.tempFilePaths[0]}&hasUploadBtn=&createBtnText=上传头像&targetName=${targetName}`
+                url: `/page/common/wecropper/index?oriImgUrl=${res.tempFilePaths[0]}&hasUploadBtn=&createBtnText=上传头像&targetName=${targetName}`
               })
             },
           })
-        } else if (res.cancel){  //取消替换
-
         }
       }
     })

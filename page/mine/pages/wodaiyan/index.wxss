@@ -58,7 +58,8 @@
   font-size: 17px;
   line-height: 2.35em;
   height: 2.35em;
-  padding: 0 13.066666%;
+  width: 44%;
+  text-align: center;
   border: 1px solid #c73564;
   border-radius: 20px;
 
