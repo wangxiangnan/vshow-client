@@ -1,52 +1,52 @@
-let { imgDirUrl } = require('../../../config.js');
+const imgRootDir = '/page/common/resources/kindPhoto';
 const data = {
-  icon_saw: imgDirUrl + 'eye.png',
+  icon_saw: imgRootDir + '/eye.png',
   photoList: [
-    {
+     /*{
       url: 'makemotto/index',
-      avatarUrl: '/img/avatar.jpg',
+      avatarUrl: imgRootDir + '/avatar.jpg',
       text: '美图佳句',
-      imgPath: `${imgDirUrl}poster_motto.png`,
+      imgPath: imgRootDir + "/motto.png",
       sawNum: 0,
       time: '2018-02-23',
       pid: 0
-    },{
+     },*/{
       url: 'handwritten/index',
-      avatarUrl: '/img/avatar.jpg',
+      avatarUrl: imgRootDir + '/avatar.jpg',
       text: '个性涂鸦',
-      imgPath: `${imgDirUrl}handwritten.png`,
+      imgPath: imgRootDir + "/handwritten.png",
       sawNum: 0,
       time: '2018-02-23',
       pid: 1
-    },{
+    }/*,{
     url: 'speciallist/index',
-    avatarUrl: '/img/avatar.jpg',
+    avatarUrl: imgRootDir + '/avatar.jpg',
     text: '创意工厂',
-    imgPath: `${imgDirUrl}banner_factory.jpg`,
+    imgPath: imgRootDir + "/factory.jpg",
     sawNum: 0,
     time: '2017-09-26',
     pid: 2
-  },{
+  }*/,{
     url: 'makeword/index',
-      avatarUrl: '/img/avatar.jpg',
+    avatarUrl: imgRootDir + '/avatar.jpg',
       text: '文字转图',
-      imgPath: `${imgDirUrl}wenzi.jpg`,
+      imgPath: imgRootDir + "/wenzi.jpg",
       sawNum: 0,
       time: '2017-09-15',
       pid: 3
     },{
       url: 'makeletter/makeletter',
-      avatarUrl: '/img/avatar.jpg',
+      avatarUrl: imgRootDir + '/avatar.jpg',
       text: '见字如面',
-      imgPath: `${imgDirUrl}jzrm_1.jpg`,
+      imgPath: imgRootDir + "/jzrm.jpg",
       sawNum: 0,
       time: '2017-06-27',
       pid: 4
     }, {
       url: 'makebarrage/makebarrage?title=疯狂弹幕',
-      avatarUrl: '/img/avatar.jpg',
+      avatarUrl: imgRootDir + '/avatar.jpg',
       text: '疯狂弹幕',
-      imgPath: `${imgDirUrl}tanmu_1.jpg`,
+      imgPath: imgRootDir + "/tanmu.jpg",
       sawNum: 0,
       time: '2017-04-20',
       pid: 5
@@ -54,7 +54,7 @@ const data = {
       url: 'make/make',
       avatarUrl: '',
       text: '创意涂鸦',
-      imgPath: `${imgDirUrl}cyty.jpg`,
+      imgPath: imgRootDir + "/cyty.jpg",
       pid: 4
     }*/]
 }

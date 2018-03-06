@@ -1,8 +1,17 @@
 page{
   background-color: #eee;
 }
+page,
+.suitable{
+  height: 100%;
+}
 .suitable-card-bg{
-  padding-top: 4%;
+  display: flex;
+  align-items: center;
+  /* padding-top: 4%; */
+  height:80%;
+  box-sizing:border-box;
+
 }
 .suitable-card{
   margin-left: auto;
@@ -44,7 +53,7 @@ page{
 
 .suitable-tips,
 .suitable-btns{
-  margin-top: 8%;
+  /* margin-top: 8%; */
 }
 .suitable-tips{
   font-size: 20px;
@@ -55,7 +64,11 @@ page{
   overflow: hidden;
 }
 .suitable-btns{
+  height:20%;
+  box-sizing:border-box;
+
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-around;
   /*padding-top: 3%;

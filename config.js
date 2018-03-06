@@ -7,11 +7,8 @@
 
 const host = "vvshow.site";
 
-const hostUrl = 'https://vvshow.site';  //线上服务器
-//const hostUrl = 'http://localhost:8080';  //本地服务器
-
-const staticHost = 'static.vvshow.site';
-const staticHostUrl = 'https://static.vvshow.site';
+//const hostUrl = 'https://vvshow.site';  //线上服务器
+const hostUrl = 'http://localhost:8080';  //本地服务器
 
 const config = {
 
@@ -20,10 +17,10 @@ const config = {
     
     hostUrl,
 
-    staticHostUrl,
+    staticHostUrl: hostUrl,
 
     // 服务器图片目录
-    imgDirUrl: `${staticHostUrl}/images/micapp/`,
+    imgDirUrl: `${hostUrl}/images/micapp/`,
 
     // 登录地址，用于建立会话
     loginUrl: `${hostUrl}/users/micapp/login`,

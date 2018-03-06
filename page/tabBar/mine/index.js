@@ -1,36 +1,37 @@
 const app = getApp();
-let { imgDirUrl, editAvatarUrl, staticHostUrl } = require('../../../config.js');
+let { editAvatarUrl, staticHostUrl } = require('../../../config.js');
+const imgRootDir = '/page/common/resources/kindMine';
 let { NetUploadFile, showTips } = require('../../../utils/util');
 Page({
   data: {
-    defaultAvatarUrl: `${imgDirUrl}defalt_avatar.png`,
+    defaultAvatarUrl: `${imgRootDir}/defalt_avatar.png`,
     userInfo: null,
-    bgPic: `${imgDirUrl}mine_bg.jpg`,
+    bgPic: `${imgRootDir}/mine_bg.jpg`,
     targetName: 'avatarUrl', //唯一的裁剪图片生成的key app.globalData.avatarUrl
     mineList: [{
       id: 1,
       name: '更多功能',
       bgColor: '#fe6a6a',
       url: '/page/mine/pages/extrafns/extrafns',
-      icon: `${imgDirUrl}wwx_cy.png`
+      icon: `${imgRootDir}/wwx_cy.png`
     }, {
       id: 2,
       name: '在线客服',
       bgColor: '#ffa648',
       url: '',  //./page / leaveword / index
-      icon: `${imgDirUrl}wwx_sy.png`
+      icon: `${imgRootDir}/wwx_sy.png`
       }, {
         id: 3,
-        name: '你问她答',
+        name: '',
         bgColor: '#6cacf4',
-        url: '/page/mine/pages/vtestpaper/index',
-        icon: `${imgDirUrl}wwx_zp.png`
+        url: '',
+        icon: `${imgRootDir}/wwx_zp.png`
       }, {
         id: 4,
         name: '关于微V秀',
         bgColor: '#b4e087',
         url: '/page/mine/pages/aboutus/index',
-        icon: `${imgDirUrl}wwx_fx.png`
+        icon: `${imgRootDir}/wwx_fx.png`
       }]
   },
 
@@ -73,14 +74,7 @@ Page({
 
   onLoad(){
     let self = this;
-    app.getUserInfo(userInfo => {
-      if(userInfo === null) return;
-      self.setData({
-        userInfo
-      });      
-      /qlogo/.test(userInfo.avatarUrl) && self.updateWechatAvatar();  //如果不是自己服务器的图片则更新最新微信头像
-    });
-
+    self.getUserInfo();
     wx.getStorage({
       key: 'bgPicPath',
       success: function(res) {
@@ -101,19 +95,26 @@ Page({
 
   onLogin(e){
     let self = this;
-    console.log(e);
+    //console.log(e);
     if (e.detail.userInfo){
-      app.getUserInfoAgain(userInfo => {
-        self.setData({
-          userInfo
-        });
+      app.globalData.userInfo = e.detail.userInfo;
+      self.setData({
+        userInfo: app.globalData.userInfo
       });
+    }
+  },
+
+  previewAvatar(){
+    if(this.data.userInfo.avatarUrl){
+      wx.previewImage({
+        urls: [this.data.userInfo.avatarUrl]
+      })
     }
   },
 
   getUserInfo(){
     let self = this;
-    app.getUserInfo(userInfo => {
+    app.getWeixinUserInfo(userInfo => {
       self.setData({
         userInfo
       });

@@ -74,7 +74,7 @@ let Login = {
               success(res) {
                 if (res.confirm) {
                   wx.switchTab({
-                    url: '/pages/mine/index',
+                    url: '/page/tabBar/mine/index',
                   })
                 }
               }
@@ -171,7 +171,8 @@ App({
     //logs.unshift(Date.now());
     //wx.setStorageSync('logs', logs);
     
-    Login.init(self);
+    //Login.init(self);
+    self.getWeixinUserInfo();
 
 
     //wss
@@ -229,9 +230,6 @@ App({
     
   },
 
-  onShow(){
-  },
-
   getNetworkType(fn){
     wx.getNetworkType({
       success: function (res) {
@@ -244,6 +242,26 @@ App({
         typeof fn === 'function' && fn(err);
       }
     })
+  },
+
+  getWeixinUserInfo(cb){
+    let self = this;
+    if (self.globalData.userInfo) {
+      typeof cb === 'function' && cb(self.globalData.userInfo);
+    } else {
+      wx.login({
+        success() {
+          wx.getUserInfo({
+            success(res) {
+              //console.log(res);
+              self.globalData.userInfo = res.userInfo;
+              typeof cb === 'function' && cb(self.globalData.userInfo);
+            }
+          })
+        }
+      })
+    }
+    
   },
 
   getUserInfo: function (cb) {

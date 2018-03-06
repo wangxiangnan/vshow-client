@@ -134,7 +134,7 @@ Page({
   },
   subCanvas: function () {
     var that = this
-    console.log('subCanvas')
+    //console.log('subCanvas')
     wx.canvasToTempFilePath({
       canvasId: 'handWriting',
       success: function (res) {

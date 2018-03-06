@@ -6,7 +6,14 @@
 
   <view class="word-bd">
     <view class="menu">
-      <navigator wx:for="{{wordList}}" wx:key="{{item.key}}" url="/page/word/pages/{{item.url}}?title={{item.text}}&pid={{item.pid}}" style="background-image: url({{item.imgPath}})" class="menu-item tc" ></navigator>
+      <navigator
+        class="menu-item"
+        wx:for="{{wordList}}"
+        wx:key="{{item.key}}"
+        url="/page/word/pages/{{item.url}}?title={{item.text}}&pid={{item.pid}}" class="menu-item tc"
+      >
+      <image class="menu-item-img" src="{{item.imgPath}}" mode="widthFix" />
+    </navigator>
     </view>
   </view>
 

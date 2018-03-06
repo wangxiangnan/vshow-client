@@ -1,11 +1,15 @@
 // pages/photo/page/make/make.js
 let { showTips, saveFormId } = require('../../../../utils/util');
+const imgRootPath = '/page/photo/resources';
 let canvas = {
   data: {
+    iconAddPath: imgRootPath + '/icon_add_green.png',
+    iconRemovePath: imgRootPath + '/icon_remove_green.png',
+    iconRefreshPath: imgRootPath + '/icon_refresh_green.png',
     ctx: null,     //canvas上下文
     curPage: null,     //Page
     curBarrageIndex: 0,   //当前字幕的索引
-    oImg: { path: '/img/upload_pic.png', width: 32, height: 32},     //背景图片等信息： 宽高，临时路径
+    oImg: { path: '../../resources/upload_pic.png', width: 32, height: 32},     //背景图片等信息： 宽高，临时路径
     lightColors: [{ index: 2, color: '#000000' }, { index: 22, color: '#000000' }, { index: 22, color: '#000000' }],
     barrages: ['']   //字幕数组， 最大十个
   },

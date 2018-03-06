@@ -11,9 +11,9 @@
     <view class="make-output-box">
       <view class="output-menu">
         <view class="output-menu_l">
-          <view class="mini-btn mini-btn1" bindtap="addBarrage"></view>
-          <view class="mini-btn mini-btn2" bindtap="delBarrage"></view>
-          <view class="mini-btn mini-btn3" bindtap="changeBarrage"></view>
+          <image class="mini-btn mini-btn1" src="{{'/page/photo/resources/icon_add_green.png'}}" mode="widthFix" bindtap="addBarrage" />
+          <image class="mini-btn mini-btn2" src="/page/photo/resources/icon_remove_green.png" mode="widthFix" bindtap="delBarrage" />
+          <image class="mini-btn mini-btn3" src="/page/photo/resources/icon_refresh_green.png" mode="widthFix" bindtap="changeBarrage" />
         </view>
         <view class="output-menu_r gb f14">
           <text bindtap="preBarrage">上一条</text><text bindtap="nextBarrage">下一条</text><text><text class="curPage">{{curBarrageIndex+1}}</text>/{{barrages.length}}</text>

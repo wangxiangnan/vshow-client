@@ -22,9 +22,9 @@
     </view>
   </view>
 
-  <view class="suitable-tips" hidden="s">
+  <!-- <view class="suitable-tips" hidden="s">
     我是自动向左滚动说明书，你碰我就会停下
-  </view>
+  </view> -->
 
   <view class="suitable-btns">
     <view

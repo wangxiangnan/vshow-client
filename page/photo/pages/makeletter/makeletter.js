@@ -69,7 +69,7 @@ String.prototype._split = function (length, separator) {
 
 //具体逻辑
 //初始化的data
-let { imgDirUrl } = require('../../../../config.js');
+const imgDir = '../../resources';
 let { saveFormId } = require('../../../../utils/util.js');
 
 const data = {
@@ -87,32 +87,32 @@ const data = {
     active: true   //是否被选中
   }, {
     id: 1,
-    src: `${imgDirUrl}let_thumb_bike.jpg`,
+    src: `${imgDir}/let_thumb_bike.jpg`,
     bgColor: '#ffffff',
     topBanner: null,
     bottomBanner: {
-      path: '/img/let_bg_bike.jpg',
+      path: `${imgDir}/let_bg_bike.jpg`,
       width: 750,
       height: 290
     },
     active: false
   }, {
     id: 2,
-    src: `${imgDirUrl}let_thumb_book.jpg`,
+    src: `${imgDir}/let_thumb_book.jpg`,
     bgColor: '#ffffff',
     topBanner: null,
     bottomBanner: {
-      path: '/img/let_bg_book.jpg',
+      path: `${imgDir}/let_bg_book.jpg`,
       width: 750,
       height: 377
     },
     active: false
   }, {
     id: 3,
-    src: `${imgDirUrl}let_thumb_grand.jpg`,
+    src: `${imgDir}/let_thumb_grand.jpg`,
     bgColor: '#f5e6bf',
     topBanner: {
-      path: '/img/let_bg_grand.jpg',
+      path: `${imgDir}/let_bg_grand.jpg`,
       width: 750,
       height: 377
     },
@@ -120,21 +120,21 @@ const data = {
     active: false
   }, {
     id: 4,
-    src: `${imgDirUrl}let_thumb_libai.jpg`,
+    src: `${imgDir}/let_thumb_libai.jpg`,
     bgColor: '#ffffff',
     topBanner: null,
     bottomBanner: {
-      path: '/img/let_bg_libai.jpg',
+      path: `${imgDir}/let_bg_libai.jpg`,
       width: 750,
       height: 470
     },
     active: false
   }, {
     id: 5,
-    src: `${imgDirUrl}let_thumb_shuijin.jpg`,
+    src: `${imgDir}/let_thumb_shuijin.jpg`,
     bgColor: '#ffffff',
     topBanner: {
-      path: '/img/let_bg_shuijin.jpg',
+      path: `${imgDir}/let_bg_shuijin.jpg`,
       width: 750,
       height: 470
     },

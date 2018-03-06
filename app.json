@@ -1,17 +1,12 @@
 {
   "pages": [
-
     "page/tabBar/photo/index",
     "page/tabBar/word/index",
     "page/tabBar/mine/index",
-
     "page/common/wecropper/index",
     "page/common/previewimage/index",
     "page/common/textarea/index"
-    
-
   ],
-
   "subPackages": [
     {
       "root": "page/photo/",
@@ -25,15 +20,18 @@
         "pages/makemotto/index",
         "pages/makeletter/makeletter"
       ]
-    }, {
+    },
+    {
       "root": "page/word/",
       "pages": [
         "pages/make/make"
       ]
-    }, {
+    },
+    {
       "root": "page/mine/",
       "pages": [
         "pages/leaveword/index",
+        "pages/scancode/index",
         "pages/sendleaveword/index",
         "pages/aboutus/index",
         "pages/wodaiyan/index",
@@ -52,7 +50,8 @@
         "pages/meet/pages/chat/index",
         "pages/extrafns/extrafns"
       ]
-    }, {
+    },
+    {
       "root": "page/test/",
       "pages": [
         "index",
@@ -63,7 +62,6 @@
       ]
     }
   ],
-
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#c73564",

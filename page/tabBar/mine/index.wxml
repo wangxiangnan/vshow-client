@@ -2,7 +2,7 @@
   <view class="mine_bg full_page" bindtap="replaceBgPic" style="background-image: url({{bgPic}})"></view>
   <view class="mine-hd relative tc g0 f15 lh1">
     <view class="mine_hd_bg absolute full" bindtap="replaceBgPic"></view>
-    <image class="avatar relative" bindtap="tapAvatar" src="{{userInfo.avatarUrl || defaultAvatarUrl}}"></image>
+    <image class="avatar relative" bindtap="previewAvatar" src="{{userInfo.avatarUrl || defaultAvatarUrl}}"></image>
     <object wx:if="{{userInfo}}">
       <view class="user-name relative">{{userInfo.nickName}}</view>
     </object>

@@ -7,7 +7,7 @@ Page({
     qrcodeHeight: 73,
     qrcodeLeft: 7,
     qrcodeBottom: 6,
-    bgUrl: '/img/see_sea.png',
+    bgUrl: '../../resources/see_sea.png',
     canvasWidth: 300,
     canvasHeight: 400,
     targetName: 'suitable',

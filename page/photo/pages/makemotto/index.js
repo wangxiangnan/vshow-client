@@ -1,11 +1,10 @@
-let { imgDirUrl } = require('../../../../config.js');
 const app = getApp();
 Page({
 
   data: {
-    bannerUrl: '/img/makemotto.png',
+    bannerUrl: '../../resources/makemotto.png',
     qrcodeUrl: '/img/qrcode.jpg',
-    iconQuotesUrl: `${imgDirUrl}icon_quotes.png`,
+    iconQuotesUrl: '../../resources/icon_quotes.png',
 
     motto: '【美文共享】别再最美的年华，辜负最好的自己',
     mottoSource: '美文共享',

@@ -3,8 +3,8 @@ const data = {
   subwayMapUrl: `${imgDirUrl}/subway_map.jpg`,
   fnList: [{
     id: 0,
-    title: '北京地铁线路图',
-    desc: '2017年最新的北京地铁线路图'
+    title: '扫码',
+    desc: '扫码识别二维码信息，以助分析'
   }, {
       id: 1,
       title: '裁剪工具1',
@@ -13,11 +13,11 @@ const data = {
       id: 2,
       title: '裁剪工具2',
       desc: '裁切比例: 4:3，手机常用比例'
-    },{
+  }/*,{
     id: 3,
     title: '寻觅',
     desc: '通过头像遇见更好的遇见吧'
-    }]
+    } */]
 }
 
 
@@ -28,8 +28,8 @@ Page({
     let id = e.currentTarget.id - 0;
     switch(id){
       case 0:   //北京地图
-        wx.previewImage({
-          urls: [data.subwayMapUrl],
+        wx.navigateTo({
+          url: '../scancode/index',
         })
       break;
       case 1:   //图片裁剪1
