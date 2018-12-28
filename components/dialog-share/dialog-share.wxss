@@ -1,0 +1,60 @@
+.dialog-share{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+.dialog-share-board{
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 74.66%;
+  padding: 50rpx 38rpx;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 20rpx;
+  background-color: #FFE56D;
+}
+.dialog-share .btn-close{
+  position: absolute;
+  top: -50px;
+  right: 0;
+  color: #fff;
+}
+.dialog-share .share-title{
+  font-size: 40rpx;
+  line-height: 60rpx;
+  color: #FF4071;
+}
+.dialog-share .share-content{
+  margin-top: 28rpx;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  color: #685600;
+}
+.dialog-share .share-targ{
+  margin-top: 41rpx;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.dialog-share .share-targ .share-targ-item{
+  display: inline-block;
+  vertical-align: top;
+  width: 84rpx;
+  height: 84rpx;
+  background-color: green;
+  border-radius:50%;
+  margin-right:16rpx;
+}
+.dialog-share .share-btn{
+  display: block;
+  padding: 0;
+  margin: 45rpx 30rpx 0;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #fff;
+  background-color: #FF9801;
+}

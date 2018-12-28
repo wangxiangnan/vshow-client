@@ -93,5 +93,7 @@
     "selectedColor": "#ea5e8b",
     "backgroundColor": "#fff",
     "borderStyle": "#47555f"
-  }
+  },
+
+  "debug": false
 }

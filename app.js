@@ -165,6 +165,9 @@ App({
   },
   onLaunch: function () {
     //调用API从本地缓存中获取数据
+    console.log('我是使用/获取的时间戳：' + new Date('2018/12/28').getTime());
+    console.log('我是使用.获取的时间戳：' + new Date('2018.12.28').getTime());
+
     let self = this;
     console.log('app onLaunch');
     //var logs = wx.getStorageSync('logs') || [];

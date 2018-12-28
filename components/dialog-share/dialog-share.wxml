@@ -1,0 +1,11 @@
+<view hidden="{{!isShow}}" class="dialog-share" catchtap="onTapMask">
+  <view class="dialog-share-board" catchtap="onTapBoard">
+    <icon class="btn-close" size="30" color="red"></icon>
+    <view class="share-title">{{title}}</view>
+    <view class="share-content">{{content}}</view>
+    <scroll-view scroll-x class="share-targ">
+      <view class="share-targ-item" wx:for="23"></view>
+    </scroll-view>
+    <button class="share-btn" open-type="share">{{shareText}}</button>
+  </view>
+</view>

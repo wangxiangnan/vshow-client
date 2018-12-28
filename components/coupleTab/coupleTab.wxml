@@ -1,0 +1,12 @@
+<view class="couple-tabs">
+  <view
+    class="couple-tab {{activeIndex == 0 ? 'active': ''}}"
+    bindtap="onTapTab"
+    data-index="0"
+  >{{ leftText }}</view>
+  <view
+    class="couple-tab {{activeIndex == 1? 'active': ''}}"
+    bindtap="onTapTab"
+    data-index="1"
+  >{{ rightText }}</view>
+</view>

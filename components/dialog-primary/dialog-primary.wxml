@@ -1,0 +1,39 @@
+<view class="dialog-primary" hidden="{{ !isShow }}">
+  <view class="dialog-mask" bindtap="hideDialog"></view>
+  <view class="dialog-main">
+
+    <view wx:if="{{showClose}}" class="iconfont icon-btn_close" bindtap="hideDialog"></view>
+
+    <view class="dialog-title">
+      <text>{{title}}</text>
+    </view>
+
+    <view class="dialog-content">
+      <view wx:if="{{descArr}}" class="dialog-desc">
+
+        <object wx:for="{{descArr}}" wx:key="{{index}}" wx:for-item="descItem">
+          <view>{{ descItem }}</view>
+        </object>
+        
+      </view>
+
+      <scroll-view  wx:if="{{imgArr}}" scroll-x  class="dialog-img-container">
+
+        <object wx:for="{{imgArr}}" wx:key="{{index}}" wx:for-item="imgItem" >
+          <view class="dialog-img-wrap">
+            <image mode="aspectFill" class="dialog-img" src="{{imgItem}}" />
+          </view>
+        </object>
+        
+      </scroll-view>
+
+      <slot></slot>
+    </view>
+
+    <view class="dialog-footer">
+      <view wx:if="{{ showCancel }}" class="btn btn-cancel" bindtap="onCancel">{{cancelText}}</view>
+      <view class="btn btn-confirm" bindtap="onConfirm">{{confirmText}}</view>
+    </view>
+
+  </view>
+</view>

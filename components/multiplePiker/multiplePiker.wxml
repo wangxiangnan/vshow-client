@@ -1,0 +1,27 @@
+<view class="multiple-piker">
+  <view class="piker-hd">
+    <view class="piker-tab">
+      <text>所在城市</text>
+      <view class="iconfont icon-dingwei"></view>
+    </view>
+    <view class="piker-tab">
+
+    </view>
+    <view class="piker-tab">
+
+    </view>
+  </view>
+  <view class="piker-bd">
+    <view class="piker-cotent">
+
+    </view>
+
+    <view class="piker-cotent">
+
+    </view>
+
+    <view class="piker-cotent">
+
+    </view>
+  </view>
+</view>

@@ -1,7 +1,31 @@
-<!-- <view class="box" style="background-image: url({{ imgUrl }})">
-  <view class="test" style="transform: translate(20px, 20px)">2ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</view>
+<!-- <view class="container">
+  <couple-tab
+    bind:onTapTab="_onTapTab"
+    leftText="待面试"
+    rightText="已结束"
+    defaultIndex="1"
+  ></couple-tab>
+
+  <dialog-share></dialog-share>
+   
 </view> -->
 
-<web-view src="http://mp.weixin.qq.com/s/aT8DnFdNIT9mTokEt2fi2A">
+<import src="/template/template.wxml"/> 
+<!-- <template wx:for="2" is="temp-qiang-item"></template>
+<template wx:for="2" is="temp-float-guide"></template> -->
 
-</web-view>
+<!-- <multiple-piker></multiple-piker>
+<view>你好啊，小丽<text></text></view> -->
+<!-- <dialog-primary
+  bind:confirmEvent="onConfirm"
+  title="参与张丽娟的拼团"
+  showCancel="{{false}}"
+  showClose="{{true}}"
+  confirmText="发起拼团"
+>
+  <template is="temp-small-pin-item" wx:for="23rf"></template>
+</dialog-primary> -->
+
+<!-- <template is="temp-big-pin-item" wx:for="23rf"></template> -->
+<template is="temp-dialog-libao"></template>
+

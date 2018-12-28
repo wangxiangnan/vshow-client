@@ -1,0 +1,126 @@
+<!--          抢单item        -->
+<template name="temp-qiang-item">
+  <view class="temp-qiang-item">
+    <view class="temp-badge">抢</view>
+    <view class="temp-hd">
+      <view class="temp-title">
+        <text class="temp-t1">育儿嫂</text> |
+        <text class="temp-t2">北京</text> |
+        <text class="temp-t3">宝宝一岁</text>
+      </view>
+
+      <view class="temp-light">￥7800</view>
+    </view>
+
+    <view class="temp-bd">
+      <view class="temp-rows">
+        <view class="rows-title">雇主要求</view>
+        <view class="rows-cont">做饭好吃，普通话标准，工作认真细心…</view>
+      </view>
+      <view class="temp-rows">
+        <view class="rows-title">服务时间</view>
+        <view class="rows-cont">2018-12-28 至 2019-03-02</view>
+      </view>
+    </view>
+  </view>
+</template>
+<!--          抢单item  end      -->
+
+<!--          引导页        -->
+<template name="temp-float-guide">
+<view class="temp-float-guide">
+  <view class="guide-mask"></view>
+  <view class="guide-main">
+    <image src="/img/images/makemotto.png" mode="widthFix" />
+  </view>
+</view>
+</template>
+
+<!--          引导页  end      -->
+
+<!--          大的拼团item        -->
+<template name="temp-big-pin-item">
+  <view class="temp-big-pin-item temp-pin-item">
+    <view class="pin-avatar-wrap">
+      <image class="pin-avatar" mode="aspectFill" src="https://dev.mumway.com//uploads//20181227/22e86f7ee64928e7b3f32c9738706c57.jpg" />
+    </view>
+
+    <view class="user-name">张舒杰</view>
+
+    <view class="pin-cont">
+      <view class="pin-lt-person">还差<text class="highlight">2</text>人</view>
+      <view class="pin-lt-time">剩余23:47:42.6</view>
+    </view>
+
+    <button class="pin-btn" size="mini">立即参与</button>
+
+  </view>
+
+</template>
+
+
+<!--          大的拼团item  end      -->
+
+<!--          小的拼团item        -->
+<template name="temp-small-pin-item">
+  <view class="temp-small-pin-item temp-pin-item">
+    <view class="pin-avatar-wrap">
+      <image class="pin-avatar" mode="aspectFill" src="https://dev.mumway.com//uploads//20181227/22e86f7ee64928e7b3f32c9738706c57.jpg" />
+    </view>
+
+    <view class="pin-cont">
+      <view class="pin-cont-top">
+        <text class="user-name">张舒杰</text>
+        <text class="pin-lt-person">还差<text class="highlight">2</text>人</text>
+      </view>
+
+      <view class="pin-cont-bottom">
+        <text class="pin-lt-time">剩余23:47:42.6</text>
+      </view>
+    </view>
+
+    <button class="pin-btn" size="mini">立即参与</button>
+
+  </view>
+
+</template>
+
+
+<!--          小的拼团item  end      -->
+
+<!--          新年礼包  end      -->
+<template name="temp-dialog-libao">
+  <view class="temp-dialog-libao">
+    <view class="dialog-mask"></view>
+    <view class="dialog-main">
+      <view class="libao-title">
+        我的新年大礼包
+      </view>
+
+      <view class="libao-list">
+
+        <view class="libao-decorate-wrap">
+          <image class="libao-decorate" />
+        </view>
+        <view class="libao-item">
+          <view class="item-img-wrap">
+            <image class="libao-img" />
+          </view>
+
+          <view class="item-desc">
+            <view class="item-title"></view>
+            <view class="item-cont"></view>
+          </view>
+
+          <view class="item-extra">
+
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</template>
+
+<!--          新年礼包  end      -->
