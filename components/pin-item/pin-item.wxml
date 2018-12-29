@@ -1,0 +1,53 @@
+<!--          大的拼团item        -->
+  
+<template is="{{size === 'default'? 'temp-big-pin-item': 'temp-small-pin-item'}}"></template>
+
+
+<template name="temp-big-pin-item">
+  <view class="temp-big-pin-item temp-pin-item">
+    <view class="pin-avatar-wrap">
+      <image class="pin-avatar" mode="aspectFill" src="https://dev.mumway.com//uploads//20181227/22e86f7ee64928e7b3f32c9738706c57.jpg" />
+    </view>
+
+    <view class="user-name">张舒杰</view>
+
+    <view class="pin-cont">
+      <view class="pin-lt-person">还差<text class="highlight">2</text>人</view>
+      <view class="pin-lt-time">剩余23:47:42.6</view>
+    </view>
+
+    <button class="pin-btn" bindtap="onJoin" size="mini">立即参与</button>
+
+  </view>
+
+</template>
+
+
+<!--          大的拼团item  end      -->
+
+<!--          小的拼团item        -->
+<template name="temp-small-pin-item">
+  <view class="temp-small-pin-item temp-pin-item">
+    <view class="pin-avatar-wrap">
+      <image class="pin-avatar" mode="aspectFill" src="https://dev.mumway.com//uploads//20181227/22e86f7ee64928e7b3f32c9738706c57.jpg" />
+    </view>
+
+    <view class="pin-cont">
+      <view class="pin-cont-top">
+        <text class="user-name">张舒杰</text>
+        <text class="pin-lt-person">还差<text class="highlight">2</text>人</text>
+      </view>
+
+      <view class="pin-cont-bottom">
+        <text class="pin-lt-time">剩余23:47:42.6</text>
+      </view>
+    </view>
+
+    <button class="pin-btn" bindtap="onJoin" size="mini">立即参与</button>
+
+  </view>
+
+</template>
+
+
+<!--          小的拼团item  end      -->

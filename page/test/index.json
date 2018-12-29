@@ -4,6 +4,7 @@
     "dialog-share": "/components/dialog-share/dialog-share",
     "test-component": "/components/test-component/test-component",
     "dialog-primary": "/components/dialog-primary/dialog-primary",
+    "pin-item": "/components/pin-item/pin-item",
     "multiple-piker": "/components/multiplePiker/multiplePiker"
   }
 }

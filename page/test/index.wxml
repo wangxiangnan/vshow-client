@@ -27,5 +27,7 @@
 </dialog-primary> -->
 
 <!-- <template is="temp-big-pin-item" wx:for="23rf"></template> -->
-<template is="temp-dialog-libao"></template>
+<!-- <template is="temp-dialog-libao"></template> -->
+
+<pin-item></pin-item>
 
